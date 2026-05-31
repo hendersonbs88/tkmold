@@ -37,16 +37,13 @@ tkmold/
 
 ## About the videos (important)
 
-The 28 mold trial videos total about 1.8 GB and several individual files exceed GitHub's 100 MB per file limit. They are:
-- Physically gathered in `marketing/videos/` in this local folder (your "one spot")
-- Cataloged in [docs/09-video-catalog.md](docs/09-video-catalog.md)
-- Kept on Google Drive at `TK Mold/Case Sharing Potential Customers/Mold trial video-Packaging/`
-- **Excluded from git** via `.gitignore` so the push does not fail
+The 28 mold trial videos total about 1.8 GB and several individual files exceed GitHub's 100 MB per file limit, so they are **hosted on Google Drive**, not in git.
 
-To get the videos into the repo, pick one (ask Brandon's call):
-1. **Git LFS** for video files (note: free GitHub LFS is 1 GB storage and 1 GB/month bandwidth, so 1.8 GB will need a paid data pack).
-2. **Host on YouTube unlisted** and link from the catalog (best for sharing and for embedding in outreach).
-3. **Keep on Drive** and link from the catalog (zero cost, current default).
+**Drive folder (anyone with the link can view):**
+https://drive.google.com/drive/folders/1FBugEXxU4X-QY4ARAXpXlN4_yYkmjIYJ
+
+- Full catalog of what each clip shows: [docs/09-video-catalog.md](docs/09-video-catalog.md)
+- The repo `marketing/videos/` folder holds only a pointer README (everything else is gitignored).
 
 ## Source of truth
 

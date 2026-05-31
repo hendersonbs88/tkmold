@@ -2,9 +2,16 @@
 
 > 28 mold trial and production videos from TK's "Case Sharing" library, showing real tooling running. These are powerful social and sales proof assets.
 >
-> **Storage note:** The raw video files total roughly 1.8 GB and several exceed GitHub's 100 MB per file limit, so they are NOT committed to git (excluded via `.gitignore`). They are gathered in one spot at `marketing/videos/` in this working folder, and the originals live on Google Drive at `TK Mold/Case Sharing Potential Customers/Mold trial video-Packaging/`. See the README for options to host them (Git LFS, YouTube unlisted, or Drive links).
+> **Storage note:** The raw video files total roughly 1.8 GB and several exceed GitHub's 100 MB per file limit, so they are NOT committed to git. They are hosted on Google Drive.
 
-## Source folder
+## Watch / download the videos
+
+**Google Drive folder (anyone with the link can view):**
+https://drive.google.com/drive/folders/1FBugEXxU4X-QY4ARAXpXlN4_yYkmjIYJ
+
+This is the home for the videos. Use this link in the claude.ai project and in outreach.
+
+## Source folder (local path on Brandon's machine)
 `G:\My Drive\TK Mold\Case Sharing Potential Customers\Mold trial video-Packaging\`
 Also includes `FULL TOOLING CASE-20240806.pptx` (copied into `marketing/presentations/`).
 
