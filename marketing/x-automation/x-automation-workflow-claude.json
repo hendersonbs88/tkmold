@@ -1,0 +1,163 @@
+{
+  "name": "X Injection Molding News Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            },
+            {
+              "triggerAtHour": 17
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "url": "https://news.google.com/rss/search?q=injection+molding+OR+mold+manufacturing+OR+china+manufacturing+OR+plastic+injection&hl=en-US&gl=US&ceid=US:en",
+        "options": {}
+      },
+      "id": "fetch-news",
+      "name": "Fetch Industry News",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [220, 0]
+    },
+    {
+      "parameters": {
+        "mode": "xmlToJson"
+      },
+      "id": "parse-xml",
+      "name": "Parse RSS Feed",
+      "type": "n8n-nodes-base.xml",
+      "typeVersion": 1,
+      "position": [440, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract news items and pick a random one\nconst items = $input.first().json.rss.channel.item;\nconst randomIndex = Math.floor(Math.random() * Math.min(items.length, 10));\nconst article = items[randomIndex];\n\nreturn [{\n  json: {\n    title: article.title,\n    link: article.link,\n    pubDate: article.pubDate,\n    source: article.source ? article.source['#text'] || article.source : 'Industry News'\n  }\n}];"
+      },
+      "id": "extract-article",
+      "name": "Extract Random Article",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [660, 0]
+    },
+    {
+      "parameters": {
+        "model": "claude-3-5-sonnet-20241022",
+        "messages": {
+          "values": [
+            {
+              "role": "system",
+              "content": "You are Brandon, a China-based mold sourcing expert who helps global companies source injection molds from China. You run TK Mold and MoldMinds. Write engaging X (Twitter) posts about injection molding industry news.\n\nYour voice:\n- Expert but approachable\n- Direct and confident\n- Practical insights from real experience\n- Occasionally reference your China-based perspective\n\nRules:\n- Keep posts under 280 characters\n- No hashtags (or max 1-2 relevant ones)\n- Add your expert take, don't just summarize\n- Make it engaging and shareable\n- End with insight, question, or call-to-action when appropriate"
+            },
+            {
+              "role": "user",
+              "content": "=Write an X post about this industry news:\n\nTitle: {{ $json.title }}\nSource: {{ $json.source }}\n\nGive your expert perspective as a China mold sourcing specialist. Keep it under 280 characters."
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.8
+        }
+      },
+      "id": "generate-post",
+      "name": "Generate Post with Claude",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [880, 0],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_CREDENTIAL_ID",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "text": "={{ $json.message.content }}",
+        "additionalFields": {}
+      },
+      "id": "post-to-x",
+      "name": "Post to X",
+      "type": "n8n-nodes-base.twitter",
+      "typeVersion": 2,
+      "position": [1100, 0],
+      "credentials": {
+        "twitterOAuth1Api": {
+          "id": "TWITTER_CREDENTIAL_ID",
+          "name": "X OAuth 1.0"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Fetch Industry News",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Industry News": {
+      "main": [
+        [
+          {
+            "node": "Parse RSS Feed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse RSS Feed": {
+      "main": [
+        [
+          {
+            "node": "Extract Random Article",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Random Article": {
+      "main": [
+        [
+          {
+            "node": "Generate Post with Claude",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Post with Claude": {
+      "main": [
+        [
+          {
+            "node": "Post to X",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

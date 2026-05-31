@@ -1,0 +1,13 @@
+# Mold trial videos: ~1.8 GB, several files exceed GitHub's 100 MB limit.
+# Staged locally in marketing/videos/ and kept on Google Drive.
+# Cataloged in docs/09-video-catalog.md. See README for hosting options (LFS / YouTube / Drive).
+marketing/videos/
+
+# OS / desktop cruft
+desktop.ini
+.DS_Store
+Thumbs.db
+
+# Temp
+*.tmp
+*~

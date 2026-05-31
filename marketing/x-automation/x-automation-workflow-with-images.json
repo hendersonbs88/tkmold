@@ -1,0 +1,280 @@
+{
+  "name": "X Injection Molding News Automation with Images",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            },
+            {
+              "triggerAtHour": 17
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Rotate news sources based on day of week\nconst sources = [\n  {\n    name: 'Google News - Injection Molding',\n    url: 'https://news.google.com/rss/search?q=injection+molding+OR+mold+making+OR+plastic+injection+OR+tooling&hl=en-US&gl=US&ceid=US:en',\n    type: 'google'\n  },\n  {\n    name: 'Google News - Reshoring & Manufacturing',\n    url: 'https://news.google.com/rss/search?q=manufacturing+reshoring+OR+reshoring+OR+nearshoring+manufacturing&hl=en-US&gl=US&ceid=US:en',\n    type: 'google'\n  },\n  {\n    name: 'Google News - China Manufacturing',\n    url: 'https://news.google.com/rss/search?q=china+manufacturing+OR+china+supply+chain+OR+china+tooling&hl=en-US&gl=US&ceid=US:en',\n    type: 'google'\n  },\n  {\n    name: 'Google News - Sustainable Manufacturing',\n    url: 'https://news.google.com/rss/search?q=sustainable+manufacturing+OR+sustainable+plastics+OR+recycled+plastics&hl=en-US&gl=US&ceid=US:en',\n    type: 'google'\n  },\n  {\n    name: 'Google News - Tariffs & Trade',\n    url: 'https://news.google.com/rss/search?q=china+tariffs+manufacturing+OR+trade+war+manufacturing+OR+import+tariffs+plastics&hl=en-US&gl=US&ceid=US:en',\n    type: 'google'\n  },\n  {\n    name: 'Google News - Automation & Industry 4.0',\n    url: 'https://news.google.com/rss/search?q=manufacturing+automation+OR+industry+4.0+OR+smart+manufacturing&hl=en-US&gl=US&ceid=US:en',\n    type: 'google'\n  },\n  {\n    name: 'Google News - Automotive & Medical Molding',\n    url: 'https://news.google.com/rss/search?q=automotive+injection+molding+OR+medical+injection+molding+OR+medical+device+manufacturing&hl=en-US&gl=US&ceid=US:en',\n    type: 'google'\n  }\n];\n\nconst now = new Date();\nconst dayOfWeek = now.getDay();\nconst hour = now.getHours();\nconst sourceIndex = (dayOfWeek * 2 + (hour > 12 ? 1 : 0)) % sources.length;\n\nconst selectedSource = sources[sourceIndex];\n\nreturn [{\n  json: {\n    sourceName: selectedSource.name,\n    sourceUrl: selectedSource.url,\n    sourceType: selectedSource.type\n  }\n}];"
+      },
+      "id": "select-source",
+      "name": "Select Daily Source",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 0]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.sourceUrl }}",
+        "options": {}
+      },
+      "id": "fetch-news",
+      "name": "Fetch Industry News",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [440, 0]
+    },
+    {
+      "parameters": {
+        "mode": "xmlToJson"
+      },
+      "id": "parse-xml",
+      "name": "Parse RSS Feed",
+      "type": "n8n-nodes-base.xml",
+      "typeVersion": 1,
+      "position": [660, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract news items and pick a random one\nconst data = $input.first().json;\nlet items = [];\n\nif (data.rss && data.rss.channel && data.rss.channel.item) {\n  items = Array.isArray(data.rss.channel.item) ? data.rss.channel.item : [data.rss.channel.item];\n} else if (data.feed && data.feed.entry) {\n  items = Array.isArray(data.feed.entry) ? data.feed.entry : [data.feed.entry];\n}\n\nif (items.length === 0) {\n  return [{ json: { error: 'No articles found', title: 'Industry insights from the field', source: 'Industry Experience', link: '' } }];\n}\n\nconst randomIndex = Math.floor(Math.random() * Math.min(items.length, 10));\nconst article = items[randomIndex];\n\nconst title = article.title && typeof article.title === 'object' ? article.title['#text'] || article.title._ || String(article.title) : article.title || 'Industry Update';\nlet link = article.link && typeof article.link === 'object' ? article.link.href || article.link['#text'] || String(article.link) : article.link || '';\nconst source = article.source ? (article.source['#text'] || article.source._ || String(article.source)) : 'Industry News';\n\n// Handle Google News redirect URLs\nif (link.includes('news.google.com')) {\n  // Extract the actual URL from Google News redirect\n  const match = link.match(/url=([^&]+)/);\n  if (match) {\n    link = decodeURIComponent(match[1]);\n  }\n}\n\nreturn [{\n  json: {\n    title: title,\n    link: link,\n    source: source\n  }\n}];"
+      },
+      "id": "extract-article",
+      "name": "Extract Random Article",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [880, 0]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.link }}",
+        "options": {
+          "redirect": {
+            "redirect": {
+              "followRedirects": true
+            }
+          },
+          "timeout": 10000
+        }
+      },
+      "id": "fetch-article-page",
+      "name": "Fetch Article Page",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1100, 0],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract Open Graph image from article HTML\nconst input = $input.first().json;\nconst html = input.data || input.body || '';\nconst prevData = $('Extract Random Article').first().json;\n\nlet imageUrl = '';\n\n// Try to find og:image\nconst ogImageMatch = html.match(/<meta[^>]*property=[\"']og:image[\"'][^>]*content=[\"']([^\"']+)[\"']/i)\n  || html.match(/<meta[^>]*content=[\"']([^\"']+)[\"'][^>]*property=[\"']og:image[\"']/i);\n\nif (ogImageMatch && ogImageMatch[1]) {\n  imageUrl = ogImageMatch[1];\n}\n\n// Fallback: try twitter:image\nif (!imageUrl) {\n  const twitterImageMatch = html.match(/<meta[^>]*name=[\"']twitter:image[\"'][^>]*content=[\"']([^\"']+)[\"']/i)\n    || html.match(/<meta[^>]*content=[\"']([^\"']+)[\"'][^>]*name=[\"']twitter:image[\"']/i);\n  if (twitterImageMatch && twitterImageMatch[1]) {\n    imageUrl = twitterImageMatch[1];\n  }\n}\n\n// Fallback: first large image in article\nif (!imageUrl) {\n  const imgMatch = html.match(/<img[^>]*src=[\"']([^\"']+(?:jpg|jpeg|png|webp)[^\"']*)[\"'][^>]*>/i);\n  if (imgMatch && imgMatch[1]) {\n    imageUrl = imgMatch[1];\n  }\n}\n\n// Clean up relative URLs\nif (imageUrl && !imageUrl.startsWith('http')) {\n  try {\n    const urlObj = new URL(prevData.link);\n    imageUrl = new URL(imageUrl, urlObj.origin).href;\n  } catch (e) {\n    imageUrl = '';\n  }\n}\n\nreturn [{\n  json: {\n    title: prevData.title,\n    link: prevData.link,\n    source: prevData.source,\n    imageUrl: imageUrl\n  }\n}];"
+      },
+      "id": "extract-image",
+      "name": "Extract Article Image",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1320, 0]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.imageUrl }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          },
+          "timeout": 10000
+        }
+      },
+      "id": "download-image",
+      "name": "Download Image",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1540, 0],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare data for Claude, carrying forward image binary if exists\nconst imageData = $('Extract Article Image').first().json;\nconst binaryData = $input.first().binary;\n\nreturn [{\n  json: {\n    title: imageData.title,\n    link: imageData.link,\n    source: imageData.source,\n    imageUrl: imageData.imageUrl,\n    hasImage: !!binaryData && !!binaryData.data\n  },\n  binary: binaryData\n}];"
+      },
+      "id": "prepare-data",
+      "name": "Prepare Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1760, 0]
+    },
+    {
+      "parameters": {
+        "resource": "text",
+        "operation": "message",
+        "model": "claude-sonnet-4-20250514",
+        "messages": {
+          "values": [
+            {
+              "content": "You are Brandon, Technical Sales Support Manager of the Americas for TK Mold and owner of MoldMinds - the offshore tooling partner for customers across the globe. You're THE China mold source for global manufacturers.\n\nWrite an X post about this industry news:\nTitle: {{ $json.title }}\nSource: {{ $json.source }}\n\nYour goal: Build authority and attract manufacturing decision-makers who need China mold sourcing.\n\nRules:\n- Keep under 280 characters\n- Lead with a strong, confident take that shows deep industry expertise\n- Make readers think \"this guy knows his stuff\"\n- End with engagement hook (question, bold prediction, or insight that invites discussion)\n- Sound like a real industry insider, not a marketer\n- No hashtags unless highly relevant\n- Leverage your unique position bridging China manufacturing and global customers\n- Output ONLY the post text, nothing else"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.8
+        }
+      },
+      "id": "generate-post",
+      "name": "Generate Post with Claude",
+      "type": "@n8n/n8n-nodes-langchain.anthropic",
+      "typeVersion": 1,
+      "position": [1980, 0]
+    },
+    {
+      "parameters": {
+        "resource": "tweet",
+        "text": "={{ $json.content[0].text }}",
+        "additionalFields": {
+          "media": {
+            "media": [
+              {
+                "media": "={{ $('Prepare Data').first().binary.data }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "post-to-x-with-image",
+      "name": "Post to X",
+      "type": "n8n-nodes-base.twitter",
+      "typeVersion": 2,
+      "position": [2200, 0]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Select Daily Source",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select Daily Source": {
+      "main": [
+        [
+          {
+            "node": "Fetch Industry News",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Industry News": {
+      "main": [
+        [
+          {
+            "node": "Parse RSS Feed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse RSS Feed": {
+      "main": [
+        [
+          {
+            "node": "Extract Random Article",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Random Article": {
+      "main": [
+        [
+          {
+            "node": "Fetch Article Page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Article Page": {
+      "main": [
+        [
+          {
+            "node": "Extract Article Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Article Image": {
+      "main": [
+        [
+          {
+            "node": "Download Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Image": {
+      "main": [
+        [
+          {
+            "node": "Prepare Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Data": {
+      "main": [
+        [
+          {
+            "node": "Generate Post with Claude",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Post with Claude": {
+      "main": [
+        [
+          {
+            "node": "Post to X",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

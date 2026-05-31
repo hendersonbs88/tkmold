@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TK Mold North America Partnership Restructure | April 2026</title>
+<style>
+  @page { size: 11in 8.5in; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    color: #1a1a1a;
+    background: #ececec;
+  }
+  .slide {
+    width: 11in;
+    height: 8.5in;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    margin: 18px auto;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+  }
+  .slide:last-child { page-break-after: auto; }
+
+  .top-bar { position: absolute; top: 0; left: 0; right: 0; height: 7px; background: #FFA827; }
+  .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 7px; background: #000; }
+
+  .page-header {
+    position: absolute; top: 20px; left: 56px; right: 56px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding-bottom: 10px; border-bottom: 1px solid #e5e5e5;
+    font-size: 9pt; color: #777; letter-spacing: 0.6px;
+  }
+  .brand { color: #000; font-weight: 700; font-size: 10.5pt; letter-spacing: 1px; }
+  .brand .chev { color: #FFA827; margin-left: 6px; letter-spacing: -1px; font-weight: 900; }
+  .hdr-right { text-align: right; text-transform: uppercase; font-size: 8.5pt; }
+  .hdr-right b { color: #000; letter-spacing: 1.2px; }
+
+  .page-footer {
+    position: absolute; bottom: 22px; left: 56px; right: 56px;
+    display: flex; justify-content: space-between;
+    font-size: 8pt; color: #999; letter-spacing: 0.8px;
+  }
+  .page-footer .left { color: #000; font-weight: 700; letter-spacing: 1px; }
+
+  .slide-body {
+    position: absolute; top: 78px; bottom: 52px; left: 56px; right: 56px;
+    display: flex; flex-direction: column;
+  }
+
+  .section-mark {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+  }
+  .section-mark .num {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: #FFA827; color: #fff; font-weight: 800; font-size: 10pt;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .section-mark .label {
+    font-size: 10pt; font-weight: 700; letter-spacing: 2.4px;
+    color: #1a1a1a; text-transform: uppercase;
+  }
+  .section-rule {
+    height: 3px; background: #FFA827; width: 100%; margin-bottom: 22px; border-radius: 2px;
+  }
+
+  h1 { font-size: 26pt; font-weight: 800; margin: 0 0 8pt 0; color: #111; line-height: 1.15; letter-spacing: -0.3px; }
+  h2 { font-size: 15pt; font-weight: 700; margin: 18px 0 8pt 0; color: #111; }
+  h3 { font-size: 11pt; font-weight: 800; margin: 0 0 8pt 0; color: #000; letter-spacing: 1.2px; text-transform: uppercase; }
+  p { font-size: 11pt; line-height: 1.55; margin: 0 0 10pt 0; color: #2c2c2c; }
+
+  ul.bullets { margin: 0 0 10pt 0; padding: 0; list-style: none; }
+  ul.bullets li {
+    font-size: 10.5pt; line-height: 1.5; color: #2c2c2c;
+    padding-left: 18px; position: relative; margin-bottom: 5px;
+  }
+  ul.bullets li::before {
+    content: '›'; position: absolute; left: 0; top: -1px;
+    color: #FFA827; font-weight: 900; font-size: 13pt;
+  }
+
+  .callout {
+    background: #fff6e6; border-left: 4px solid #FFA827;
+    padding: 12px 18px; font-style: italic; color: #4a2b08;
+    font-size: 10.5pt; line-height: 1.5; margin: 8px 0 14px 0;
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .col-card {
+    background: #fafafa; border: 1px solid #ebebeb; border-left: 4px solid #FFA827;
+    padding: 16px 20px; border-radius: 3px;
+  }
+  .col-card h3 { margin-bottom: 10px; font-size: 10.5pt; color: #000; }
+  .col-card ul.bullets li { font-size: 10pt; margin-bottom: 4px; }
+
+  .money-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 8px 0 16px 0; }
+  .money-card {
+    background: #fafafa; border-left: 3px solid #FFA827;
+    padding: 14px 18px;
+  }
+  .money-card .label {
+    font-size: 8.5pt; color: #777; text-transform: uppercase;
+    letter-spacing: 1.8px; margin-bottom: 6px;
+  }
+  .money-card .value { font-size: 20pt; color: #000; font-weight: 800; line-height: 1.05; }
+  .money-card .sub { font-size: 8.5pt; color: #888; margin-top: 4px; }
+
+  .terms-table { width: 100%; border-collapse: collapse; margin: 6px 0; }
+  .terms-table th {
+    background: #0a0a0a; color: white; text-align: left;
+    padding: 10px 14px; font-size: 9pt; text-transform: uppercase; letter-spacing: 1.4px;
+  }
+  .terms-table td {
+    padding: 9px 14px; font-size: 10pt; border-bottom: 1px solid #eee; color: #2c2c2c;
+  }
+  .terms-table td:first-child { font-weight: 700; color: #000; }
+  .terms-table tr:last-child td { border-bottom: none; }
+
+  .stages { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 4px; }
+  .stage { background: #fafafa; border-top: 4px solid #FFA827; padding: 14px 16px; }
+  .stage .eyebrow {
+    font-size: 8.5pt; color: #E67817; letter-spacing: 2px;
+    text-transform: uppercase; font-weight: 800; margin-bottom: 4px;
+  }
+  .stage h3 { font-size: 11pt; margin-bottom: 8px; text-transform: none; letter-spacing: 0; }
+  .stage ul.bullets li { font-size: 9.5pt; margin-bottom: 3px; }
+
+  .num-list { list-style: none; counter-reset: item; padding: 0; margin: 0; }
+  .num-list li {
+    counter-increment: item; padding-left: 38px; position: relative;
+    font-size: 10.5pt; line-height: 1.55; margin-bottom: 9px; color: #2c2c2c;
+  }
+  .num-list li::before {
+    content: counter(item); position: absolute; left: 0; top: -1px;
+    width: 24px; height: 24px; background: #0a0a0a; color: white;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 9.5pt; font-weight: 800;
+  }
+
+  .closing-callout {
+    background: #0a0a0a; color: white; padding: 18px 24px;
+    border-left: 5px solid #FFA827; margin-top: 14px;
+  }
+  .closing-callout p { color: #e5e5e5; margin: 0; font-size: 11pt; line-height: 1.6; }
+
+  .tl-row { display: grid; grid-template-columns: 160px 1fr; gap: 16px; margin: 6px 0; align-items: baseline; }
+  .tl-when { font-weight: 800; font-size: 10pt; color: #000; letter-spacing: 0.5px; }
+  .tl-what { font-size: 10.5pt; color: #2c2c2c; }
+
+  /* COVER */
+  .cover { background: #07121f; color: #fff; padding: 0; }
+  .cover .top-bar, .cover .bottom-bar { background: #FFA827; }
+  .cover-inner {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; text-align: center; padding: 60px;
+  }
+  .cover .rule-top { width: 70px; height: 4px; background: #FFA827; margin-bottom: 28px; border-radius: 2px; }
+  .cover .eyebrow {
+    color: #fff; font-size: 10pt; letter-spacing: 5px; text-transform: uppercase;
+    font-weight: 800; margin-bottom: 6px;
+  }
+  .cover .submark { color: #9aa9bf; font-size: 9pt; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 42px; }
+  .cover h1 {
+    color: white; font-size: 46pt; font-weight: 800; line-height: 1.08; letter-spacing: -0.8px;
+    margin-bottom: 18px; max-width: 900px;
+  }
+  .cover .subtitle {
+    color: #FFA827; font-size: 13pt; letter-spacing: 5px; text-transform: uppercase;
+    margin-bottom: 52px; font-weight: 700;
+  }
+  .cover .rule-mid { width: 340px; height: 1px; background: #30425c; margin: 0 auto 40px auto; }
+  .cover .meta { font-size: 10pt; color: #c9d4e4; line-height: 1.9; }
+  .cover .meta .k { color: #fff; font-weight: 800; margin-right: 6px; letter-spacing: 0.3px; }
+  .cover .meta .v { color: #FFA827; }
+  .cover .footer-label {
+    position: absolute; bottom: 38px; left: 0; right: 0; text-align: center;
+    color: #5a6b82; font-size: 8.5pt; letter-spacing: 4px; text-transform: uppercase;
+  }
+
+  /* subtle chevron brand ornament */
+  .chev-orn {
+    position: absolute; right: 46px; top: 128px;
+    font-size: 64pt; font-weight: 900; color: #FFA827; opacity: 0.08;
+    letter-spacing: -8px; pointer-events: none;
+  }
+
+  @media print {
+    body { background: white; }
+    .slide { margin: 0 auto; box-shadow: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: COVER -->
+<section class="slide cover">
+  <div class="top-bar"></div>
+  <div class="cover-inner">
+    <div class="rule-top"></div>
+    <div class="eyebrow">TK Mold Leadership Briefing</div>
+    <div class="submark">Henderson Tooling Associates, Inc. &nbsp;|&nbsp; DBA MoldMinds.com</div>
+    <h1>North America Partnership Restructure</h1>
+    <div class="subtitle">Agency Structure and U.S. Manufacturing Path</div>
+    <div class="rule-mid"></div>
+    <div class="meta">
+      <div><span class="k">Submitted to:</span><span class="v">Godsend and TK Mold Executive Leadership</span></div>
+      <div><span class="k">Submitted by:</span>Henderson Tooling Associates, Inc. DBA MoldMinds.com</div>
+      <div><span class="k">Date:</span>April 19, 2026</div>
+    </div>
+  </div>
+  <div class="footer-label">Confidential &nbsp;&nbsp;&nbsp; For TK Internal Leadership Review Only</div>
+  <div class="bottom-bar"></div>
+</section>
+
+<!-- SLIDE 2: Market Shift -->
+<section class="slide">
+  <div class="top-bar"></div>
+  <div class="page-header">
+    <div class="brand">TK MOLD <span class="chev">&lt;&lt;&lt;</span></div>
+    <div class="hdr-right"><b>North America Partnership Restructure</b> &nbsp;|&nbsp; April 2026</div>
+  </div>
+  <div class="chev-orn">&lt;&lt;&lt;</div>
+  <div class="slide-body">
+    <div class="section-mark"><div class="num">01</div><div class="label">The Shift in the U.S. Mold Market</div></div>
+    <div class="section-rule"></div>
+    <h1>U.S. OEMs are moving off Asian mold sourcing.</h1>
+    <div class="callout">This is not a cyclical reaction to tariffs. It is a durable structural shift that favors toolmakers with U.S. manufacturing capability.</div>
+    <h3>What is driving it</h3>
+    <ul class="bullets">
+      <li>Effective tariff stack on Chinese origin molds now 78 to 88 percent (MFN base, Section 301, Section 232 steel derivatives, IEEPA)</li>
+      <li>Reshoring pressure accelerating at the largest OEMs in medical, automotive, packaging, and consumer electronics</li>
+      <li>IP protection concerns intensifying on high value programs</li>
+      <li>Supply chain resilience now a boardroom priority after 2020 to 2024 disruptions</li>
+      <li>Shorter lead time requirements as product lifecycles compress</li>
+      <li>Geopolitical risk priced into every major sourcing decision</li>
+    </ul>
+    <p style="margin-top: 8px;"><b>The pace is accelerating, not reversing.</b></p>
+  </div>
+  <div class="page-footer"><span class="left">CONFIDENTIAL</span><span>Page 02</span></div>
+  <div class="bottom-bar"></div>
+</section>
+
+<!-- SLIDE 3: What's at Stake -->
+<section class="slide">
+  <div class="top-bar"></div>
+  <div class="page-header">
+    <div class="brand">TK MOLD <span class="chev">&lt;&lt;&lt;</span></div>
+    <div class="hdr-right"><b>North America Partnership Restructure</b> &nbsp;|&nbsp; April 2026</div>
+  </div>
+  <div class="chev-orn">&lt;&lt;&lt;</div>
+  <div class="slide-body">
+    <div class="section-mark"><div class="num">02</div><div class="label">What TK Has at Stake</div></div>
+    <div class="section-rule"></div>
+    <h1>TK's 12 months of North America investment is real. Without U.S. manufacturing, it erodes.</h1>
+    <div class="two-col" style="margin-top: 14px;">
+      <div class="col-card">
+        <h3>What Is Already Built</h3>
+        <ul class="bullets">
+          <li>MoldMinds.com brand established and active in the U.S. market</li>
+          <li>tkmold.us domain secured and ready for buildout</li>
+          <li>Relationships in place with reputable U.S. toolshops including Jaeco Precision, A&amp;M Tool and Mold, Western Carolina Tool and Mold, United Tool and Mold, Alchemy Precision, Berman Mold and Engineering</li>
+          <li>Active molder conversations producing pipeline across medical, automotive, packaging</li>
+          <li>Trade show presence, technical content, and LinkedIn visibility building credibility</li>
+        </ul>
+      </div>
+      <div class="col-card" style="border-left-color:#b23d00;">
+        <h3>What Is at Risk</h3>
+        <ul class="bullets">
+          <li>Customers are asking directly for U.S. manufacturing capability</li>
+          <li>Toolmakers who cannot answer that question will lose the business to competitors who can</li>
+          <li>TK's current position is strong but the window is time sensitive</li>
+          <li>Without a formal structure, the investment rides on one individual rather than a legal entity with a team</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span class="left">CONFIDENTIAL</span><span>Page 03</span></div>
+  <div class="bottom-bar"></div>
+</section>
+
+<!-- SLIDE 4: The Jaeco Opportunity -->
+<section class="slide">
+  <div class="top-bar"></div>
+  <div class="page-header">
+    <div class="brand">TK MOLD <span class="chev">&lt;&lt;&lt;</span></div>
+    <div class="hdr-right"><b>North America Partnership Restructure</b> &nbsp;|&nbsp; April 2026</div>
+  </div>
+  <div class="chev-orn">&lt;&lt;&lt;</div>
+  <div class="slide-body">
+    <div class="section-mark"><div class="num">03</div><div class="label">The Jaeco Opportunity</div></div>
+    <div class="section-rule"></div>
+    <h1>Jaeco Precision is the operational U.S. manufacturing platform TK needs.</h1>
+    <div class="two-col" style="margin-top: 12px;">
+      <div>
+        <h3>What Jaeco Brings</h3>
+        <ul class="bullets">
+          <li>Precision machining and injection mold manufacturing, Asheboro, North Carolina</li>
+          <li>2025 EBITDA of $885,000, verified in LOI negotiations</li>
+          <li>16,500 square foot industrial facility with full equipment set</li>
+          <li>CNC machining centers, EDM machines, precision grinding, inspection and quality systems</li>
+          <li>Established workforce, customer contracts, vendor relationships</li>
+          <li>Intellectual property, trade names, phone numbers, websites all transfer</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Why It Matters for TK</h3>
+        <ul class="bullets">
+          <li>Operational U.S. footprint from day one with no greenfield delay</li>
+          <li>No workforce recruitment risk, existing team stays through transition</li>
+          <li>Established customer base to absorb introduction of TK capability</li>
+          <li>Located in the Southeast, close to major OEM clusters in medical, automotive, packaging</li>
+          <li>Six month transition period with both sellers already agreed in LOI</li>
+          <li>Brandon has direct relationship with sellers (Jeff Callicutt, Eric Lambeth)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span class="left">CONFIDENTIAL</span><span>Page 04</span></div>
+  <div class="bottom-bar"></div>
+</section>
+
+<!-- SLIDE 5: Jaeco Economics -->
+<section class="slide">
+  <div class="top-bar"></div>
+  <div class="page-header">
+    <div class="brand">TK MOLD <span class="chev">&lt;&lt;&lt;</span></div>
+    <div class="hdr-right"><b>North America Partnership Restructure</b> &nbsp;|&nbsp; April 2026</div>
+  </div>
+  <div class="chev-orn">&lt;&lt;&lt;</div>
+  <div class="slide-body">
+    <div class="section-mark"><div class="num">04</div><div class="label">Jaeco Deal Economics (Per LOI)</div></div>
+    <div class="section-rule"></div>
+    <h1>Total purchase price: $6,133,000.</h1>
+    <div class="money-grid">
+      <div class="money-card">
+        <div class="label">Business Value</div>
+        <div class="value">$4,425,000</div>
+        <div class="sub">5.0x 2025 EBITDA of $885,000</div>
+      </div>
+      <div class="money-card">
+        <div class="label">Accounts Receivable</div>
+        <div class="value">$1,046,000</div>
+        <div class="sub">At face value, verified in diligence</div>
+      </div>
+      <div class="money-card">
+        <div class="label">Cash on Hand</div>
+        <div class="value">$662,000</div>
+        <div class="sub">Transferred at closing</div>
+      </div>
+    </div>
+    <div class="two-col" style="margin-top: 6px;">
+      <div>
+        <h3>Real Estate and Transition</h3>
+        <ul class="bullets">
+          <li>10 year commercial lease on 16,500 sq ft facility (real estate excluded from purchase)</li>
+          <li>Two 5 year renewal options at buyer discretion, 3 percent annual escalation cap</li>
+          <li>Six month transition period with both sellers</li>
+          <li>60 day due diligence, 90 day exclusivity</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Financing Structure</h3>
+        <ul class="bullets">
+          <li>SBA 7(a) loan: 70 to 80 percent of total purchase price</li>
+          <li>Buyer equity: 10 to 20 percent</li>
+          <li>Seller financing: 10 to 20 percent (subordinated to SBA senior debt)</li>
+          <li>Sellers to pay off all outstanding bills and payables at or before closing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span class="left">CONFIDENTIAL</span><span>Page 05</span></div>
+  <div class="bottom-bar"></div>
+</section>
+
+<!-- SLIDE 6: Two Paths -->
+<section class="slide">
+  <div class="top-bar"></div>
+  <div class="page-header">
+    <div class="brand">TK MOLD <span class="chev">&lt;&lt;&lt;</span></div>
+    <div class="hdr-right"><b>North America Partnership Restructure</b> &nbsp;|&nbsp; April 2026</div>
+  </div>
+  <div class="chev-orn">&lt;&lt;&lt;</div>
+  <div class="slide-body">
+    <div class="section-mark"><div class="num">05</div><div class="label">Two Acquisition Paths</div></div>
+    <div class="section-rule"></div>
+    <h1>TK has optionality on how to enter U.S. manufacturing.</h1>
+    <div class="two-col" style="margin-top: 12px;">
+      <div class="col-card">
+        <h3>Path A &nbsp;|&nbsp; Brandon Acquires via SBA</h3>
+        <ul class="bullets">
+          <li>Brandon acquires Jaeco personally through HTA</li>
+          <li>SBA 7(a) loan pathway, credit review update expected early May 2026</li>
+          <li>TK accesses U.S. manufacturing through the MoldMinds partnership</li>
+          <li>Lower capital commitment from TK</li>
+          <li>Existing seller relationships carry forward cleanly</li>
+          <li>Brandon operates the asset, TK partners commercially and technically</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h3>Path B &nbsp;|&nbsp; TK Contracted Acquisition</h3>
+        <ul class="bullets">
+          <li>TK contracts Brandon to acquire Jaeco on TK's behalf</li>
+          <li>TK owns the asset directly</li>
+          <li>Brandon operates Jaeco under a management and services agreement</li>
+          <li>Faster close, not gated on SBA timeline</li>
+          <li>Direct TK control of U.S. manufacturing footprint</li>
+          <li>Higher capital commitment from TK with the corresponding return and ownership</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout" style="margin-top: 16px;">Either way, TK gets the footprint. The question for leadership is ownership structure and capital appetite.</div>
+  </div>
+  <div class="page-footer"><span class="left">CONFIDENTIAL</span><span>Page 06</span></div>
+  <div class="bottom-bar"></div>
+</section>
+
+<!-- SLIDE 7: Partnership Structure -->
+<section class="slide">
+  <div class="top-bar"></div>
+  <div class="page-header">
+    <div class="brand">TK MOLD <span class="chev">&lt;&lt;&lt;</span></div>
+    <div class="hdr-right"><b>North America Partnership Restructure</b> &nbsp;|&nbsp; April 2026</div>
+  </div>
+  <div class="chev-orn">&lt;&lt;&lt;</div>
+  <div class="slide-body">
+    <div class="section-mark"><div class="num">06</div><div class="label">Partnership Structure</div></div>
+    <div class="section-rule"></div>
+    <h1>MoldMinds public. Brandon silent. HTA contract restructured.</h1>
+    <h3 style="margin-top: 10px;">Public Partner</h3>
+    <p>MoldMinds.com, a DBA of Henderson Tooling Associates, Inc., operates as TK Mold's partner in the Americas. MoldMinds is the market facing brand. All client relationships, communications, sourcing coordination, and marketing activity run under the MoldMinds name. TK's intellectual property, customer relationships, and brand identity are protected at all times.</p>
+    <h3>Silent Partner</h3>
+    <p>Brandon Henderson operates as silent partner behind MoldMinds, providing strategic direction, technical oversight, and the acquisition pathway for Jaeco. Brandon's name does not appear on customer facing materials.</p>
+    <h3>Foundation</h3>
+    <p>HTA already holds an active contract with TK Mold. This proposal restructures that existing agreement to reflect the expanded scope: agency operations in North America plus the U.S. manufacturing pathway through Jaeco.</p>
+    <div class="callout" style="margin-top: 8px;">Optional brand presence: tkmold.us is already secured. If TK prefers a direct U.S. brand identity, the website will be built to TK brand standards at HTA's expense, at no cost to TK.</div>
+  </div>
+  <div class="page-footer"><span class="left">CONFIDENTIAL</span><span>Page 07</span></div>
+  <div class="bottom-bar"></div>
+</section>
+
+<!-- SLIDE 8: Commercial Terms -->
+<section class="slide">
+  <div class="top-bar"></div>
+  <div class="page-header">
+    <div class="brand">TK MOLD <span class="chev">&lt;&lt;&lt;</span></div>
+    <div class="hdr-right"><b>North America Partnership Restructure</b> &nbsp;|&nbsp; April 2026</div>
+  </div>
+  <div class="chev-orn">&lt;&lt;&lt;</div>
+  <div class="slide-body">
+    <div class="section-mark"><div class="num">07</div><div class="label">Commercial Terms</div></div>
+    <div class="section-rule"></div>
+    <h1>Simple structure. Aligned incentives. Clear boundaries.</h1>
+    <table class="terms-table" style="margin-top: 10px;">
+      <thead>
+        <tr><th style="width: 26%;">Component</th><th style="width: 26%;">Structure</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Monthly Retainer</td><td>$10,000 USD</td><td>Step down from current $12,910. Reflects restructured agency scope.</td></tr>
+        <tr><td>Annual Sales Target</td><td>None</td><td>Agency structure, not quota carrying. New business still flows through.</td></tr>
+        <tr><td>Finders Fees</td><td>5% of project value</td><td>On new business introduced and converted through MoldMinds. 24 month window from customer introduction.</td></tr>
+        <tr><td>Prime Contractor Projects</td><td>Case by case</td><td>Applies when MoldMinds is buyer of record with the end customer (e.g., LatAm payment intermediary structures). Project specific margin agreed in advance.</td></tr>
+        <tr><td>Technical Deployment Costs</td><td>Covered by TK</td><td>All travel, lodging, per diem for engineers deployed on TK's behalf.</td></tr>
+        <tr><td>tkmold.us Website</td><td>HTA expense</td><td>Built to TK brand standards at no cost to TK, upon agreement.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout" style="margin-top: 12px;"><b>Role clarity.</b> Brandon has accepted a separate industry position providing personal financial stability. The role is intentionally separate from MoldMinds operations and presents no conflict with the agency structure. Any customer information Brandon encounters in that separate capacity regarding Chinese mold sourcing will continue to flow to Alexandra as professional courtesy, consistent with current practice.</div>
+  </div>
+  <div class="page-footer"><span class="left">CONFIDENTIAL</span><span>Page 08</span></div>
+  <div class="bottom-bar"></div>
+</section>
+
+<!-- SLIDE 9: Phased Roadmap -->
+<section class="slide">
+  <div class="top-bar"></div>
+  <div class="page-header">
+    <div class="brand">TK MOLD <span class="chev">&lt;&lt;&lt;</span></div>
+    <div class="hdr-right"><b>North America Partnership Restructure</b> &nbsp;|&nbsp; April 2026</div>
+  </div>
+  <div class="chev-orn">&lt;&lt;&lt;</div>
+  <div class="slide-body">
+    <div class="section-mark"><div class="num">08</div><div class="label">Phased Roadmap</div></div>
+    <div class="section-rule"></div>
+    <h1>Three stages. Clear handoffs. Measurable progress.</h1>
+    <div class="stages" style="margin-top: 14px;">
+      <div class="stage">
+        <div class="eyebrow">Stage 1</div>
+        <h3>Agency Operational</h3>
+        <p style="font-size: 9.5pt; color: #666; margin: 0 0 8px 0;"><b>Timing:</b> Immediately upon agreement</p>
+        <ul class="bullets">
+          <li>MoldMinds manages all North American client relationships</li>
+          <li>Technical dispatches on demand, costs covered by TK</li>
+          <li>Offshore tooling sourcing managed for U.S. customers</li>
+          <li>Pipeline conversion through existing MoldMinds channels</li>
+          <li>HTA contract restructured and in force</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <div class="eyebrow">Stage 2</div>
+        <h3>Jaeco Operational</h3>
+        <p style="font-size: 9.5pt; color: #666; margin: 0 0 8px 0;"><b>Timing:</b> Mid to late 2026</p>
+        <ul class="bullets">
+          <li>U.S. mold manufacturing capability online</li>
+          <li>TK engineering expertise integrated with existing Jaeco staff</li>
+          <li>Validation infrastructure built in (IQ, OQ, PQ)</li>
+          <li>Workforce education initiatives with TK technical transfer</li>
+          <li>Temporary visa pathways for TK personnel to train Jaeco team</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <div class="eyebrow">Stage 3</div>
+        <h3>Full TK Mold US Integration</h3>
+        <p style="font-size: 9.5pt; color: #666; margin: 0 0 8px 0;"><b>Timing:</b> 2027 and beyond</p>
+        <ul class="bullets">
+          <li>Physical facility functioning as U.S. service and operations hub</li>
+          <li>Mold engineering, design, start up, commissioning</li>
+          <li>Engineering changes, modifications, repairs, on site consulting</li>
+          <li>Permanent TK presence in one of the most important tooling markets in the world</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span class="left">CONFIDENTIAL</span><span>Page 09</span></div>
+  <div class="bottom-bar"></div>
+</section>
+
+<!-- SLIDE 10: Next Steps and Ask -->
+<section class="slide">
+  <div class="top-bar"></div>
+  <div class="page-header">
+    <div class="brand">TK MOLD <span class="chev">&lt;&lt;&lt;</span></div>
+    <div class="hdr-right"><b>North America Partnership Restructure</b> &nbsp;|&nbsp; April 2026</div>
+  </div>
+  <div class="chev-orn">&lt;&lt;&lt;</div>
+  <div class="slide-body">
+    <div class="section-mark"><div class="num">09</div><div class="label">Next Steps and Ask</div></div>
+    <div class="section-rule"></div>
+    <h1>Decisions and alignment needed from TK leadership.</h1>
+    <ol class="num-list" style="margin-top: 12px;">
+      <li>Confirm preferred acquisition path: <b>A</b> (Brandon acquires via SBA), <b>B</b> (TK contracted acquisition), or hold until May 2026 credit update.</li>
+      <li>Approve the $10,000 monthly retainer structure effective on agreement execution.</li>
+      <li>Confirm finders fee structure of 5 percent of project value with 24 month window from customer introduction.</li>
+      <li>Acknowledge prime contractor project framework for cases where MoldMinds is buyer of record (case by case margin).</li>
+      <li>Authorize HTA to begin tkmold.us buildout if TK prefers a direct U.S. brand presence.</li>
+      <li>Set timing for execution of the formal restructured partnership agreement.</li>
+    </ol>
+    <h2 style="margin-top: 18px;">Proposed Timeline</h2>
+    <div class="tl-row"><div class="tl-when">Week of April 21</div><div class="tl-what">Initial TK leadership alignment call</div></div>
+    <div class="tl-row"><div class="tl-when">Early May 2026</div><div class="tl-what">SBA credit update clarity (affects Path A timing)</div></div>
+    <div class="tl-row"><div class="tl-when">May 2026</div><div class="tl-what">Formal partnership agreement execution</div></div>
+    <div class="tl-row"><div class="tl-when">Q3 2026</div><div class="tl-what">Target window for Jaeco acquisition close</div></div>
+    <div class="closing-callout"><p>TK is positioned. The investment is real. The market is moving. This proposal converts twelve months of groundwork into a durable structure that holds regardless of what the market does next.</p></div>
+  </div>
+  <div class="page-footer"><span class="left">CONFIDENTIAL</span><span>Page 10</span></div>
+  <div class="bottom-bar"></div>
+</section>
+
+</body>
+</html>

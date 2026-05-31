@@ -1,0 +1,212 @@
+{
+  "name": "X Injection Molding News - 4-1-1 Strategy",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            },
+            {
+              "triggerAtHour": 17
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Rotate news sources and implement 4-1-1 posting strategy\nconst sources = [\n  {\n    name: 'Google News - Injection Molding',\n    url: 'https://news.google.com/rss/search?q=injection+molding+OR+mold+making+OR+plastic+injection+OR+tooling&hl=en-US&gl=US&ceid=US:en'\n  },\n  {\n    name: 'Google News - Reshoring & Manufacturing',\n    url: 'https://news.google.com/rss/search?q=manufacturing+reshoring+OR+reshoring+OR+nearshoring+manufacturing&hl=en-US&gl=US&ceid=US:en'\n  },\n  {\n    name: 'Google News - China Manufacturing',\n    url: 'https://news.google.com/rss/search?q=china+manufacturing+OR+china+supply+chain+OR+china+tooling&hl=en-US&gl=US&ceid=US:en'\n  },\n  {\n    name: 'Google News - Sustainable Manufacturing',\n    url: 'https://news.google.com/rss/search?q=sustainable+manufacturing+OR+sustainable+plastics+OR+recycled+plastics&hl=en-US&gl=US&ceid=US:en'\n  },\n  {\n    name: 'Google News - Tariffs & Trade',\n    url: 'https://news.google.com/rss/search?q=china+tariffs+manufacturing+OR+trade+war+manufacturing+OR+import+tariffs+plastics&hl=en-US&gl=US&ceid=US:en'\n  },\n  {\n    name: 'Google News - Automation & Industry 4.0',\n    url: 'https://news.google.com/rss/search?q=manufacturing+automation+OR+industry+4.0+OR+smart+manufacturing&hl=en-US&gl=US&ceid=US:en'\n  }\n];\n\nconst now = new Date();\nconst dayOfWeek = now.getDay();\nconst hour = now.getHours();\n\n// Calculate post number (0-5 for 6 posts = 3 days of 2x daily)\nconst postNumber = (dayOfWeek * 2 + (hour > 12 ? 1 : 0)) % 6;\n\n// 4-1-1 Strategy:\n// Posts 0,1,2,3 = Value (share news with commentary)\n// Post 4 = Authority (thought leadership, no link)\n// Post 5 = Convert (soft CTA)\nlet postType = 'value';\nif (postNumber === 4) {\n  postType = 'authority';\n} else if (postNumber === 5) {\n  postType = 'convert';\n}\n\nconst sourceIndex = postNumber % sources.length;\nconst selectedSource = sources[sourceIndex];\n\nreturn [{\n  json: {\n    sourceName: selectedSource.name,\n    sourceUrl: selectedSource.url,\n    postType: postType,\n    postNumber: postNumber\n  }\n}];"
+      },
+      "id": "select-source",
+      "name": "Select Daily Source",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 0]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.sourceUrl }}",
+        "options": {}
+      },
+      "id": "fetch-news",
+      "name": "Fetch Industry News",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [440, 0]
+    },
+    {
+      "parameters": {
+        "mode": "xmlToJson"
+      },
+      "id": "parse-xml",
+      "name": "Parse RSS Feed",
+      "type": "n8n-nodes-base.xml",
+      "typeVersion": 1,
+      "position": [660, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract news items and pick a random one\nconst data = $input.first().json;\nconst sourceData = $('Select Daily Source').first().json;\nlet items = [];\n\nif (data.rss && data.rss.channel && data.rss.channel.item) {\n  items = Array.isArray(data.rss.channel.item) ? data.rss.channel.item : [data.rss.channel.item];\n} else if (data.feed && data.feed.entry) {\n  items = Array.isArray(data.feed.entry) ? data.feed.entry : [data.feed.entry];\n}\n\nif (items.length === 0) {\n  return [{ json: { \n    error: 'No articles found', \n    title: 'Industry insights from the field', \n    source: 'Industry Experience', \n    link: '',\n    postType: sourceData.postType,\n    postNumber: sourceData.postNumber\n  }}];\n}\n\nconst randomIndex = Math.floor(Math.random() * Math.min(items.length, 10));\nconst article = items[randomIndex];\n\nconst title = article.title && typeof article.title === 'object' ? article.title['#text'] || article.title._ || String(article.title) : article.title || 'Industry Update';\nconst source = article.source ? (article.source['#text'] || article.source._ || String(article.source)) : 'Industry News';\n\n// Get the link - for Google News this is the redirect URL which will still show preview\nlet link = '';\nif (article.link && typeof article.link === 'object') {\n  link = article.link.href || article.link['#text'] || String(article.link);\n} else {\n  link = article.link || '';\n}\n\nreturn [{\n  json: {\n    title: title,\n    link: link,\n    source: source,\n    postType: sourceData.postType,\n    postNumber: sourceData.postNumber\n  }\n}];"
+      },
+      "id": "extract-article",
+      "name": "Extract Random Article",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [880, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build the appropriate prompt based on post type\nconst data = $input.first().json;\nconst postType = data.postType;\n\nlet prompt = '';\n\nif (postType === 'value') {\n  prompt = `You are Brandon, Technical Sales Support Manager of the Americas for TK Mold and owner of MoldMinds - the offshore tooling partner for customers across the globe. You're THE China mold source for global manufacturers.\n\nWrite an X post sharing this industry news with your expert commentary:\nTitle: ${data.title}\nSource: ${data.source}\n\nRules:\n- Keep under 240 characters (leave room for article link)\n- Lead with YOUR expert take or insight, not a summary of the article\n- Sound like an industry insider sharing news with peers\n- End with an engagement hook (question, bold take, or insight that invites discussion)\n- No hashtags unless highly relevant\n- DO NOT include any URL - the link will be added separately\n- Output ONLY the post text, nothing else`;\n\n} else if (postType === 'authority') {\n  prompt = `You are Brandon, Technical Sales Support Manager of the Americas for TK Mold and owner of MoldMinds - the offshore tooling partner for customers across the globe. You're THE China mold source for global manufacturers with years of experience navigating complex sourcing relationships.\n\nWrite an original thought leadership X post about a challenge, insight, or trend in injection molding and mold sourcing. Draw from experience with:\n- Building and maintaining China manufacturing relationships\n- Navigating tariff impacts and supply chain shifts\n- Quality vs cost tradeoffs that most buyers get wrong\n- What separates great tooling partners from the rest\n- Lessons learned from sourcing 100s of tools across Asia\n- The reality of offshore tooling that nobody talks about\n\nThis news might inspire your thinking: ${data.title}\n\nRules:\n- Keep under 280 characters\n- Share a hard-won insight, contrarian take, or truth bomb\n- Make readers think \"damn, I never thought of it that way\"\n- Be direct and confident - you've earned these opinions\n- NO selling, NO CTA - just pure value and expertise\n- No hashtags\n- Output ONLY the post text, nothing else`;\n\n} else if (postType === 'convert') {\n  prompt = `You are Brandon, Technical Sales Support Manager of the Americas for TK Mold and owner of MoldMinds - the offshore tooling partner for customers across the globe. You're THE China mold source for global manufacturers.\n\nYou're also a skilled consultative salesperson who knows that the best sales don't feel like sales. You solve problems. You're the guy people call when they need straight talk about sourcing molds from Asia.\n\nWrite an X post about this industry news with a natural, soft call-to-action:\nTitle: ${data.title}\nSource: ${data.source}\n\nRules:\n- Keep under 200 characters (leave room for link + CTA)\n- Start with brief, insightful commentary on the news\n- End with a helpful, peer-to-peer CTA that feels natural\n- Good CTA examples:\n  - \"Navigating these changes? Happy to share what we're seeing on the ground - brandon@tkmold.com\"\n  - \"If you're rethinking your tooling strategy, let's talk - brandon@tkmold.com\"\n  - \"Dealing with this right now? I've got some thoughts - brandon@tkmold.com\"\n- The CTA should feel like a friend offering help, NOT a sales pitch\n- No hashtags\n- DO NOT include the article URL - it will be added separately\n- Output ONLY the post text, nothing else`;\n}\n\nreturn [{\n  json: {\n    title: data.title,\n    link: data.link,\n    source: data.source,\n    postType: postType,\n    prompt: prompt\n  }\n}];"
+      },
+      "id": "build-prompt",
+      "name": "Build Prompt by Type",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1100, 0]
+    },
+    {
+      "parameters": {
+        "resource": "text",
+        "operation": "message",
+        "model": "claude-sonnet-4-20250514",
+        "messages": {
+          "values": [
+            {
+              "content": "={{ $json.prompt }}"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.8
+        }
+      },
+      "id": "generate-post",
+      "name": "Generate Post with Claude",
+      "type": "@n8n/n8n-nodes-langchain.anthropic",
+      "typeVersion": 1,
+      "position": [1320, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Combine Claude output with article link based on post type\nconst claudeOutput = $input.first().json;\nconst promptData = $('Build Prompt by Type').first().json;\n\nlet postText = claudeOutput.content[0].text;\nconst postType = promptData.postType;\nconst articleLink = promptData.link;\n\n// Add article link for value and convert posts (not authority)\nif (postType !== 'authority' && articleLink) {\n  postText = postText + '\\n\\n' + articleLink;\n}\n\nreturn [{\n  json: {\n    finalPost: postText,\n    postType: postType\n  }\n}];"
+      },
+      "id": "combine-post",
+      "name": "Combine Post + Link",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1540, 0]
+    },
+    {
+      "parameters": {
+        "resource": "tweet",
+        "text": "={{ $json.finalPost }}",
+        "additionalFields": {}
+      },
+      "id": "post-to-x",
+      "name": "Post to X",
+      "type": "n8n-nodes-base.twitter",
+      "typeVersion": 2,
+      "position": [1760, 0]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Select Daily Source",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select Daily Source": {
+      "main": [
+        [
+          {
+            "node": "Fetch Industry News",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Industry News": {
+      "main": [
+        [
+          {
+            "node": "Parse RSS Feed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse RSS Feed": {
+      "main": [
+        [
+          {
+            "node": "Extract Random Article",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Random Article": {
+      "main": [
+        [
+          {
+            "node": "Build Prompt by Type",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Prompt by Type": {
+      "main": [
+        [
+          {
+            "node": "Generate Post with Claude",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Post with Claude": {
+      "main": [
+        [
+          {
+            "node": "Combine Post + Link",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Combine Post + Link": {
+      "main": [
+        [
+          {
+            "node": "Post to X",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
