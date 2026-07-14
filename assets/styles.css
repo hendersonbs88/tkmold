@@ -56,6 +56,8 @@
 
   .trusted{background:#fff;border-bottom:1px solid var(--line);padding:34px 0}
   .trusted p{text-align:center;color:var(--muted);font-weight:700;font-size:.78rem;letter-spacing:.11em;text-transform:uppercase;margin-bottom:22px}
+  .trusted-h{text-align:center;font-size:clamp(1.35rem,2.5vw,1.9rem);font-weight:800;line-height:1.2;max-width:26ch;margin:0 auto 34px;color:var(--ink);letter-spacing:-.01em}
+  .logos img[src$=".svg"]{height:26px}
   .logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 40px}
   .logos img{height:32px;width:auto;opacity:.6;filter:grayscale(1);transition:opacity .2s,filter .2s}
   .logos img:hover{opacity:1;filter:none}
