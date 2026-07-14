@@ -59,7 +59,7 @@
   .nav-mobile a{padding:14px 24px;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line)}
   .nav-mobile a:last-child{border-bottom:0;color:#1EB955}
   .nav-mobile a:active{background:rgba(240,130,0,.06)}
-  #capabilities,#industries,#support,#quote{scroll-margin-top:92px}
+  #capabilities,#products,#support,#quote{scroll-margin-top:92px}
   .lbl-short{display:none}
 
   /* Hero, dark photographic like TK */
