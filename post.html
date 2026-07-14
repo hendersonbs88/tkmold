@@ -76,6 +76,20 @@
       body.innerHTML='<div class="a-date">'+fmtDate(p.date)+'</div><h1>'+title+'</h1>'
         +(im?'<img class="a-hero" src="'+im+'" alt="" />':'')
         +'<div class="content">'+(p.content&&p.content.rendered||'')+'</div>';
+      // SEO + AEO: canonical, meta, OpenGraph, Article schema
+      var url=location.origin+'/blog/'+slug;
+      function setMeta(a,k,v){var m=document.querySelector('meta['+a+'="'+k+'"]');if(!m){m=document.createElement('meta');m.setAttribute(a,k);document.head.appendChild(m);}m.setAttribute('content',v);}
+      var desc=(p.excerpt&&p.excerpt.rendered||'').replace(/<[^>]+>/g,'').trim().slice(0,160);
+      setMeta('name','description',desc);
+      setMeta('property','og:title',document.title);
+      setMeta('property','og:description',desc);
+      setMeta('property','og:type','article');
+      setMeta('property','og:url',url);
+      if(im) setMeta('property','og:image',im);
+      var can=document.querySelector('link[rel=canonical]');if(!can){can=document.createElement('link');can.rel='canonical';document.head.appendChild(can);}can.href=url;
+      var ld={"@context":"https://schema.org","@type":"Article","headline":(p.title.rendered||'').replace(/<[^>]+>/g,''),"datePublished":p.date,"dateModified":p.modified||p.date,"author":{"@type":"Person","name":"Brandon Henderson","jobTitle":"Technical Sales Support Manager, Americas"},"publisher":{"@type":"Organization","name":"TK Group (Holdings) Ltd."},"mainEntityOfPage":url,"description":desc};
+      if(im) ld.image=im;
+      var sc=document.createElement('script');sc.type='application/ld+json';sc.textContent=JSON.stringify(ld);document.head.appendChild(sc);
     })
     .catch(function(){ body.innerHTML='<p>We could not load this post. <a href="/blog">Back to the blog</a>.</p>'; });
 })();
