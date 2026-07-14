@@ -1,0 +1,5 @@
+# Keep the internal knowledge base out of the public deployment.
+docs/
+marketing/
+claude-design/
+README.md

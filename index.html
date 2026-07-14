@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TK Mold USA | Offshore Injection Molds, US Based Technical Support</title>
+<meta name="description" content="TK Group builds precision injection molds at offshore pricing, backed by a US based technical team in North Carolina. Send your part and request a mold quote." />
+<style>
+  :root{
+    --orange:#F08200; --orange-2:#E77817; --orange-soft:rgba(240,130,0,.12);
+    --ink:#1F2328; --body:#565f68; --muted:#6B7079; --line:#E4E6E9;
+    --bg:#FFFFFF; --bg-soft:#F5F6F8; --footer:#EEEFF0; --dark:#17191C;
+    --radius:12px; --shadow:0 8px 26px rgba(20,25,31,.08); --shadow-lg:0 22px 54px rgba(20,25,31,.16);
+    --maxw:1160px; --ease-out:cubic-bezier(.23,1,.32,1);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:3px solid rgba(240,130,0,.6);outline-offset:2px;border-radius:6px}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{line-height:1.14;letter-spacing:-.01em;margin:0;text-wrap:balance}
+  h1{font-size:clamp(2.1rem,4.6vw,3.4rem);font-weight:800}
+  h2{font-size:clamp(1.55rem,3vw,2.35rem);font-weight:800}
+  h3{font-size:1.12rem;font-weight:700}
+  p{margin:0}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-weight:700;font-size:1rem;padding:.85rem 1.4rem;border-radius:8px;border:2px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s,color .15s;white-space:nowrap}
+  .btn svg{width:19px;height:19px;flex:0 0 auto}
+  .btn-primary{background:var(--orange);color:#fff;box-shadow:0 4px 14px rgba(20,25,31,.16)}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--orange-2)}
+  .btn-wa{background:#25D366;color:#fff;border-color:#25D366}
+  .btn-wa:hover{transform:translateY(-2px);background:#1EB955;border-color:#1EB955;color:#fff}
+  .btn-li{background:#0A66C2;color:#fff;box-shadow:0 4px 14px rgba(20,25,31,.16)}
+  .btn-li:hover{background:#08508F;transform:translateY(-2px);color:#fff}
+  .btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+  .btn-outline:hover{border-color:#fff;transform:translateY(-2px)}
+  .btn:active{transform:scale(.97)}
+  .cw-send:active,.rail a:active,.rail button:active{transform:scale(.95)}
+
+  /* Header, matched to TK global */
+  header{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px}
+  .brandwrap{display:flex;align-items:center;gap:16px;min-width:0}
+  .brandwrap img{height:40px;width:auto}
+  .stocktag{border-left:1px solid var(--line);padding-left:16px;line-height:1.25}
+  .stocktag b{display:block;font-size:.74rem;font-weight:700;color:var(--ink);letter-spacing:.02em}
+  .stocktag span{display:block;font-size:.72rem;color:var(--muted)}
+  .nav-right{display:flex;align-items:center;gap:12px}
+
+  /* Hero, dark photographic like TK */
+  .hero{position:relative;color:#fff;overflow:hidden}
+  .hero .bg{position:absolute;inset:0;background:#17191C url("assets/site/hero_poster.jpg") center/cover no-repeat}
+  .hero .bg img,.hero .bg video{width:100%;height:100%;object-fit:cover;display:block}
+  .hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,20,23,.92) 0%,rgba(18,20,23,.78) 46%,rgba(18,20,23,.42) 100%)}
+  .hero-inner{position:relative;padding:88px 0 92px;max-width:640px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.8rem;letter-spacing:.09em;text-transform:uppercase;color:var(--orange);margin-bottom:20px}
+  .dot{width:5px;height:5px;border-radius:50%;background:var(--orange)}
+  .hero h1 span{color:var(--orange)}
+  .lead{font-size:1.16rem;color:#D7DBDF;margin:22px 0 30px;max-width:44ch}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+  .chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:.48rem 1rem;font-size:.88rem;font-weight:600;color:#EAEDF0}
+
+  .trusted{background:#fff;border-bottom:1px solid var(--line);padding:34px 0}
+  .trusted p{text-align:center;color:var(--muted);font-weight:700;font-size:.78rem;letter-spacing:.11em;text-transform:uppercase;margin-bottom:22px}
+  .logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 40px}
+  .logos img{height:32px;width:auto;opacity:.6;filter:grayscale(1);transition:opacity .2s,filter .2s}
+  .logos img:hover{opacity:1;filter:none}
+
+  section{padding:76px 0}
+  .sec-head{max-width:66ch;margin-bottom:44px}
+  .kicker{color:var(--orange);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;margin-bottom:12px}
+  .sec-head p{color:var(--body);font-size:1.06rem;margin-top:14px}
+
+  .soft{background:var(--bg-soft)}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .ico{width:46px;height:46px;border-radius:10px;background:var(--orange-soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--orange)}
+  .ico svg{width:24px;height:24px}
+  .card h3{margin-bottom:8px}
+  .card p{color:var(--body);font-size:.95rem}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .cap{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
+  .cap:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .cap .ph{aspect-ratio:16/10;overflow:hidden;background:#fff;padding:14px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
+  .cap .ph img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transition:transform .35s}
+  .cap:hover .ph img{transform:scale(1.04)}
+  .cap.env .ph{background:#12181f;padding:0;border-bottom:none}
+  .cap.env .ph img{max-width:none;max-height:none;width:100%;height:100%;object-fit:contain}
+  .cap .body{padding:20px 22px}
+  .cap h3{font-size:1.04rem;margin-bottom:6px}
+  .cap p{color:var(--body);font-size:.93rem}
+  .industries{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+  .industries span{background:var(--ink);color:#fff;border-radius:999px;padding:.5rem 1.1rem;font-size:.88rem;font-weight:600}
+
+  .facility{position:relative;color:#fff}
+  .facility .bg{position:absolute;inset:0;overflow:hidden}
+  .facility .bg img{width:100%;height:100%;object-fit:cover}
+  .facility .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,20,23,.94) 0%,rgba(18,20,23,.76) 55%,rgba(18,20,23,.5) 100%)}
+  .facility .inner{position:relative;padding:84px 0}
+  .facility h2{color:#fff;max-width:20ch}
+  .facility p{color:#D7DBDF;font-size:1.08rem;margin-top:18px;max-width:52ch}
+  .fpoints{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+  .fpoints span{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:.52rem 1rem;border-radius:8px;font-weight:600;font-size:.9rem}
+  .fpoints span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange)}
+
+  .apps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .app{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .app img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .35s}
+  .app:hover img{transform:scale(1.05)}
+  .app b{position:absolute;left:0;right:0;bottom:0;padding:16px;color:#fff;font-size:1rem;background:linear-gradient(180deg,transparent,rgba(18,20,23,.86))}
+
+  .channel-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
+  .headshot{position:relative;justify-self:center}
+  .headshot img{width:300px;height:300px;border-radius:50%;object-fit:cover;border:6px solid #fff;box-shadow:var(--shadow-lg)}
+  .headshot .ring{position:absolute;inset:-10px;border-radius:50%;border:2px solid var(--orange);opacity:.55}
+  .channel h2{margin-bottom:6px}
+  .channel .role{color:var(--orange);font-weight:700;font-size:1.04rem;margin-bottom:16px}
+  .channel p{color:var(--body);font-size:1.04rem}
+  .creds{display:grid;grid-template-columns:1fr 1fr;gap:10px 22px;margin:22px 0 26px;padding:0}
+  .creds li{list-style:none;display:flex;gap:10px;align-items:flex-start;color:var(--ink);font-weight:600;font-size:.95rem}
+  .creds li::before{content:"\2713";color:var(--orange);font-weight:800}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .step b{display:inline-flex;width:44px;height:44px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;align-items:center;justify-content:center;font-size:1.12rem;margin-bottom:14px}
+  .step h3{font-size:1.02rem;margin-bottom:6px}
+  .step p{color:var(--body);font-size:.93rem}
+
+  .quote{position:relative;background:linear-gradient(180deg,#1B1E22 0%,#17191C 100%);color:#fff}
+  .quote .kicker{color:var(--orange)}
+  .quote-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+  .quote-copy h2{color:#fff}
+  .quote-copy>p{color:#C6CCD2;margin-top:16px;font-size:1.04rem}
+  .assure{display:flex;gap:12px;align-items:flex-start;margin-top:18px}
+  .assure .tick{color:var(--orange);font-weight:800}
+  .assure p{margin:0;color:#D7DBDF;font-size:.97rem}
+  form{background:#fff;border-radius:16px;padding:28px;box-shadow:var(--shadow-lg)}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-weight:700;color:var(--ink);font-size:.88rem;margin-bottom:6px}
+  .field .req{color:var(--orange)}
+  .field input,.field select,.field textarea{width:100%;padding:.78rem .9rem;border:1.5px solid var(--line);border-radius:9px;font-size:1rem;font-family:inherit;color:var(--ink);background:#fff;transition:border .15s,box-shadow .15s}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px var(--orange-soft)}
+  .field textarea{resize:vertical;min-height:92px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  form .btn{width:100%;margin-top:6px;font-size:1.04rem;padding:.95rem}
+  .form-fine{color:var(--muted);font-size:.82rem;text-align:center;margin-top:12px}
+  .hp{position:absolute;left:-9999px;opacity:0}
+
+  /* Footer, matched to TK global (light grey) */
+  footer{background:var(--footer);color:var(--body);padding:56px 0 0}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:40px}
+  .foot-brand img{height:38px;margin-bottom:18px}
+  .foot-brand .line{font-weight:700;color:var(--ink);margin-bottom:4px}
+  .foot-brand a.mail{color:var(--orange);font-weight:700}
+  .foot-brand .addr{color:var(--muted);font-size:.9rem;margin-top:10px;max-width:34ch}
+  .foot-social{display:flex;gap:10px;margin-top:16px}
+  .foot-social a{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--body);transition:background .15s,color .15s,border-color .15s}
+  .foot-social a:hover{background:var(--orange);color:#fff;border-color:var(--orange)}
+  .foot-social svg{width:17px;height:17px}
+  .fcol h4{display:flex;align-items:center;gap:8px;font-size:.98rem;color:var(--ink);margin:0 0 14px}
+  .fcol h4::before{content:"\00AB\00AB";color:var(--orange);font-weight:800}
+  .fcol a{display:block;color:var(--body);font-size:.93rem;margin-bottom:10px}
+  .fcol a:hover{color:var(--orange)}
+  .foot-bottom{border-top:1px solid #E1E2E4;padding:18px 0;font-size:.86rem;color:var(--muted)}
+
+  /* Floating contact rail, TK style */
+  .rail{position:fixed;right:18px;bottom:26px;z-index:70;display:flex;flex-direction:column;gap:10px;align-items:center}
+  .rail a,.rail button{width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:#fff;box-shadow:var(--shadow-lg);color:var(--ink);transition:transform .15s,background .15s,color .15s}
+  .rail a:hover,.rail button:hover{transform:translateY(-3px)}
+  .rail svg{width:23px;height:23px}
+  .rail .chat{background:var(--orange);color:#fff}
+  .rail .chat:hover{background:var(--orange-2)}
+  .rail .wa:hover{background:#25D366;color:#fff}
+  .rail .up{width:46px;height:46px}
+  .rail .up:hover{background:var(--ink);color:#fff}
+
+  /* Chat widget, MoldMinds style, TK branded */
+  .cw{position:fixed;right:18px;bottom:26px;z-index:80;width:360px;max-width:calc(100vw - 36px);background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);overflow:hidden;display:none;flex-direction:column;animation:mmChatIn .28s ease}
+  .cw.open{display:flex}
+  .cw{transform-origin:bottom right;animation:mmChatIn .32s var(--ease-out)}
+  @keyframes mmChatIn{0%{opacity:0;transform:translateY(10px) scale(.96)}100%{opacity:1;transform:translateY(0) scale(1)}}
+  .cw-head{background:linear-gradient(120deg,var(--orange),var(--orange-2));color:#fff;padding:16px 18px;display:flex;align-items:center;gap:12px}
+  .cw-av{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.6)}
+  .cw-head .t{font-weight:700;line-height:1.2}
+  .cw-head .s{font-size:.78rem;opacity:.9;display:flex;align-items:center;gap:6px}
+  .cw-head .s::before{content:"";width:7px;height:7px;border-radius:50%;background:#7CFFB0;display:inline-block}
+  .cw-head .x{margin-left:auto;background:transparent;border:none;color:#fff;cursor:pointer;font-size:1.3rem;line-height:1;opacity:.9}
+  .cw-body{padding:16px;background:var(--bg-soft);max-height:320px;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
+  .msg{max-width:82%;padding:.6rem .8rem;border-radius:12px;font-size:.92rem;line-height:1.4}
+  .msg.bot{background:#fff;border:1px solid var(--line);color:var(--ink);border-bottom-left-radius:4px;align-self:flex-start}
+  .msg.me{background:var(--orange);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+  .cw-foot{border-top:1px solid var(--line);padding:12px;background:#fff;display:flex;flex-direction:column;gap:8px}
+  .cw-foot input{width:100%;padding:.6rem .7rem;border:1.5px solid var(--line);border-radius:9px;font-size:.92rem;font-family:inherit}
+  .cw-foot input:focus{outline:none;border-color:var(--orange)}
+  .cw-row{display:flex;gap:8px}
+  .cw-row input{flex:1}
+  .cw-send{background:var(--orange);color:#fff;border:none;border-radius:9px;padding:0 14px;cursor:pointer;font-weight:700}
+  .cw-send:hover{background:var(--orange-2)}
+  .cw-alt{font-size:.78rem;color:var(--muted);text-align:center}
+  .cw-alt a{color:var(--orange);font-weight:700}
+
+  @media(max-width:900px){
+    .stocktag{display:none}
+    .grid-4,.grid-3{grid-template-columns:1fr 1fr}
+    .apps{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .channel-grid,.quote-grid{grid-template-columns:1fr;gap:32px}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .hero-inner{padding:60px 0}
+  }
+  @media(max-width:560px){
+    .grid-4,.grid-3,.apps{grid-template-columns:1fr}
+    .two,.creds{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr}
+    .headshot img{width:240px;height:240px}
+    .nav-right .btn span.lbl{display:none}
+  }
+  .quote-cta{background:#fff;border-radius:16px;padding:32px;box-shadow:var(--shadow-lg);text-align:left}
+  .quote-cta h3{font-size:1.3rem;margin-bottom:10px}
+  .quote-cta p{color:var(--body);font-size:1rem;margin-bottom:22px}
+  .quote-cta .btn{font-size:1.05rem;padding:.95rem 1.6rem}
+  .quote-cta-alt{margin-top:16px;font-size:.9rem;color:var(--muted)}
+  .quote-cta-alt a{color:var(--orange);font-weight:700}
+  .hero-note{margin-top:16px;font-size:.9rem;color:#CBD1D7;font-weight:600}
+  .hero-note b{color:var(--orange);font-weight:800;margin:0 6px}
+  .qm-note{background:var(--bg-soft);border-radius:8px;padding:10px 12px;font-size:.82rem;color:var(--body);text-align:center;margin-bottom:16px;font-weight:600}
+
+  dialog#quoteModal{width:min(560px,calc(100vw - 32px));border:none;border-radius:16px;padding:0;box-shadow:var(--shadow-lg);overflow:hidden}
+  dialog#quoteModal::backdrop{background:rgba(15,18,22,.55);backdrop-filter:blur(3px)}
+  dialog#quoteModal[open]{animation:mmChatIn .3s var(--ease-out)}
+  .qm-head{background:linear-gradient(120deg,var(--orange),var(--orange-2));color:#fff;padding:20px 24px;display:flex;align-items:center;gap:14px}
+  .qm-head img{height:26px;background:#fff;padding:6px 10px;border-radius:7px}
+  .qm-head .t{font-weight:800;font-size:1.1rem;line-height:1.15}
+  .qm-head .s{font-size:.82rem;opacity:.92}
+  .qm-head .x{margin-left:auto;background:transparent;border:none;color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;opacity:.9}
+  .qm-body{padding:24px;max-height:70vh;overflow-y:auto}
+  #quoteModal .field label{font-size:.86rem}
+  #quoteModal form .btn{width:100%;margin-top:4px;padding:.95rem;font-size:1.04rem}
+  .qm-fine{color:var(--muted);font-size:.8rem;text-align:center;margin-top:10px}
+  .qm-success{text-align:center;padding:20px 8px}
+  .qm-success .chk{width:56px;height:56px;border-radius:50%;background:var(--orange-soft);color:var(--orange);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.8rem;font-weight:800}
+  .qm-success h3{margin-bottom:8px}
+  .qm-success p{color:var(--body)}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+    .hero .bg video{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brandwrap">
+      <a href="#top" aria-label="TK Holdings"><img src="assets/tk_logo_transparent.png" alt="TK Holdings" /></a>
+      <div class="stocktag"><b>HK Main Board Listed</b><span>Stock Code 2283</span></div>
+    </div>
+    <div class="nav-right">
+      <a class="btn btn-wa" href="https://wa.me/13369539664?text=Hi%20Brandon%2C%20I%27d%20like%20to%20talk%20about%20a%20mold%20program." target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 001.51 5.26l-.999 3.648 3.879-1.018zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span class="lbl">WhatsApp</span>
+      </a>
+      <a class="btn btn-primary" href="#quote">Request a Quote</a>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="bg">
+    <video autoplay muted loop playsinline preload="auto" poster="assets/site/hero_poster.jpg">
+      <source src="assets/site/tk_hero.webm" type="video/webm" />
+      <source src="assets/site/tk_hero.mp4" type="video/mp4" />
+      <img src="assets/site/hero_poster.jpg" alt="TK Group injection molding machine running a mold" />
+    </video>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow"><span class="dot"></span>US Based Technical Support <span class="dot"></span> Global Tooling</div>
+    <h1>Offshore injection molds. <span>US based accountability.</span></h1>
+    <p class="lead">TK Group builds precision injection molds at offshore pricing, backed by a technical team here in the United States. Send your part and get a real quote.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#quote">Request a Mold Quote</a>
+      <a class="btn btn-wa" href="https://wa.me/13369539664?text=Hi%20Brandon%2C%20I%27d%20like%20to%20talk%20about%20a%20mold%20program." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 001.51 5.26l-.999 3.648 3.879-1.018zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Message on WhatsApp
+      </a>
+      <a class="btn btn-outline" href="#capabilities">See Capabilities</a>
+    </div>
+    <p class="hero-note">Free DFM review with every quote <b>·</b> You approve T1 before production <b>·</b> No obligation</p>
+    <div class="chips">
+      <span class="chip">Precision moldmaking</span>
+      <span class="chip">Multi cavity and hot runner</span>
+      <span class="chip">DFM on every RFQ</span>
+      <span class="chip">Medical, automotive, consumer</span>
+    </div>
+  </div>
+</section>
+
+<div class="trusted">
+  <div class="wrap">
+    <p>Tooling trusted by global brands</p>
+    <div class="logos">
+      <img src="assets/site/logo_nespresso.jpg" alt="Nespresso" loading="lazy" />
+      <img src="assets/site/logo_bosch.jpg" alt="Bosch" loading="lazy" />
+      <img src="assets/site/logo_philips.jpg" alt="Philips" loading="lazy" />
+      <img src="assets/site/logo_3m.jpg" alt="3M" loading="lazy" />
+      <img src="assets/site/logo_abb.jpg" alt="ABB" loading="lazy" />
+      <img src="assets/site/logo_husqvarna.jpg" alt="Husqvarna" loading="lazy" />
+      <img src="assets/site/logo_jabra.jpg" alt="Jabra" loading="lazy" />
+      <img src="assets/site/logo_poly.jpg" alt="Poly" loading="lazy" />
+      <img src="assets/site/logo_valeo.jpg" alt="Valeo" loading="lazy" />
+    </div>
+  </div>
+</div>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">The TK advantage</div>
+      <h2>Offshore pricing without the offshore guesswork</h2>
+      <p>Most overseas tooling means time zone gaps, language friction, and no one to hold accountable. TK gives you a US based engineer on the account and a global manufacturing group behind the steel.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div><h3>US based support</h3><p>Talk to a real technical contact in your timezone, from first RFQ through first article.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3>Offshore cost</h3><p>Competitive tooling economics that domestic mold shops cannot match, with pricing put in writing.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></div><h3>Precision and quality</h3><p>Tight tolerances, validated tool steel, and T1 samples you sign off on before production runs.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><h3>One point of contact</h3><p>No handoffs and no runaround. One owner drives your program to production.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="capabilities">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Capabilities</div>
+      <h2>Tooling built for production, not just samples</h2>
+      <p>From prototype tools to high cavitation production molds, TK covers the full range of injection tooling and secondary processes.</p>
+    </div>
+    <div class="grid-3">
+      <div class="cap"><div class="ph"><img src="assets/site/cap_auto.jpg" alt="Automotive interior injection mold" loading="lazy" /></div><div class="body"><h3>Automotive tooling</h3><p>Instrument panels, interior and structural molds engineered for volume.</p></div></div>
+      <div class="cap"><div class="ph"><img src="assets/site/cap_exterior.jpg" alt="Automotive exterior bumper mold" loading="lazy" /></div><div class="body"><h3>Large and exterior molds</h3><p>Bumpers and large format tooling with balanced fill and clean surfaces.</p></div></div>
+      <div class="cap"><div class="ph"><img src="assets/site/cap_multicavity.jpg" alt="Multi cavity mold with molded parts" loading="lazy" /></div><div class="body"><h3>Multi cavity and hot runner</h3><p>High cavitation molds with integrated hot runner systems for consistent parts at scale.</p></div></div>
+      <div class="cap"><div class="ph"><img src="assets/site/cap_packaging.jpg" alt="Packaging thin wall mold" loading="lazy" /></div><div class="body"><h3>Packaging and thin wall</h3><p>Closures, containers, and thin wall tooling built for fast cycles.</p></div></div>
+      <div class="cap"><div class="ph"><img src="assets/site/cap_optical.jpg" alt="Optical lighting lens mold" loading="lazy" /></div><div class="body"><h3>Optical and lighting</h3><p>Lenses and lighting components with the finishes cosmetic parts demand.</p></div></div>
+      <div class="cap env"><div class="ph"><img src="assets/site/cap_precision.jpg" alt="Precision mold machining detail" loading="lazy" /></div><div class="body"><h3>Precision machining</h3><p>In tolerance cavity and core work backed by measurement and validation.</p></div></div>
+    </div>
+    <div class="industries">
+      <span>Medical</span><span>Automotive</span><span>Consumer</span><span>Industrial</span><span>Packaging</span><span>Electronics</span>
+    </div>
+  </div>
+</section>
+
+<section class="facility">
+  <div class="bg"><img src="assets/site/facility.jpg" alt="TK Group manufacturing facility" loading="lazy" /></div>
+  <div class="wrap inner">
+    <h2>A global manufacturing group behind every mold</h2>
+    <p>TK Group operates large scale precision moldmaking and molding facilities serving customers across automotive, medical, packaging, consumer, and industrial markets worldwide.</p>
+    <div class="fpoints">
+      <span>Precision moldmaking</span>
+      <span>Quality managed manufacturing</span>
+      <span>Global delivery</span>
+      <span>US technical support</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Industries we serve</div>
+      <h2>Molds behind products people use every day</h2>
+    </div>
+    <div class="apps">
+      <div class="app"><img src="assets/site/app_auto.jpg" alt="Automotive components" loading="lazy" /><b>Automotive</b></div>
+      <div class="app"><img src="assets/site/app_medical.jpg" alt="Medical device components" loading="lazy" /><b>Medical</b></div>
+      <div class="app"><img src="assets/site/app_packaging.jpg" alt="Packaging and cosmetics" loading="lazy" /><b>Packaging</b></div>
+      <div class="app"><img src="assets/site/app_consumer.jpg" alt="Consumer electronics" loading="lazy" /><b>Consumer electronics</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="soft channel">
+  <div class="wrap channel-grid">
+    <div class="headshot"><span class="ring"></span><img src="assets/site/brandon.jpg" alt="Brandon Henderson, Technical Sales Support Manager, Americas" /></div>
+    <div>
+      <div class="kicker">Your US support channel</div>
+      <h2>Brandon Henderson</h2>
+      <div class="role">Technical Sales Support Manager, Americas</div>
+      <p>Your direct line to TK Group in the United States. Based in North Carolina, Brandon is your single point of contact from first RFQ through first article and production, translating your program into clear tooling scope, pricing, and timelines. Behind him stands TK Group, a Hong Kong Main Board listed manufacturer, Stock Code 2283.</p>
+      <ul class="creds">
+        <li>15+ years in injection molding</li>
+        <li>Journeyman Tool &amp; Die</li>
+        <li>CPSP certified</li>
+        <li>Fortune 500 tooling program experience</li>
+        <li>Consumer, healthcare, and automotive</li>
+        <li>Based in North Carolina, USA</li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#quote">Talk to Brandon</a>
+        <a class="btn btn-li" href="https://www.linkedin.com/in/brandonhenderson88/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+          Connect on LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">How it works</div>
+      <h2>From your part to production in four steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><b>1</b><h3>Send your part and specs</h3><p>Share your model, volumes, material, and target dates.</p></div>
+      <div class="step"><b>2</b><h3>DFM and quote</h3><p>We review manufacturability and return clear pricing and lead time.</p></div>
+      <div class="step"><b>3</b><h3>Tooling build and T1</h3><p>The mold is built and T1 samples are shipped for your approval.</p></div>
+      <div class="step"><b>4</b><h3>Approval and production</h3><p>You approve first article, then production runs to spec.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="quote" class="quote">
+  <div class="wrap quote-grid">
+    <div class="quote-copy">
+      <div class="kicker">Request a quote</div>
+      <h2>Get a firm quote and a free DFM review</h2>
+      <p>Offshore tooling has a reputation for being a gamble. TK USA was built to take the gamble out. Send your part, see the pricing and the plan, and keep a US based engineer accountable to you from RFQ through first article.</p>
+      <div class="assure"><span class="tick">✓</span><p>You approve T1 samples before any production. Nothing ships until you sign off.</p></div>
+      <div class="assure"><span class="tick">✓</span><p>Every quote includes a free DFM review, before steel is cut.</p></div>
+      <div class="assure"><span class="tick">✓</span><p>Brandon replies personally. No call center, no black box.</p></div>
+      <div class="assure"><span class="tick">✓</span><p>No obligation. Your part and details stay private.</p></div>
+    </div>
+
+    <div class="quote-cta">
+      <h3>Start your RFQ in about two minutes</h3>
+      <p>Share your part and requirements. It lands straight in Brandon's inbox at TK Mold USA, and you get a real answer, not a runaround.</p>
+      <button class="btn btn-primary js-quote" type="button">Request a Mold Quote</button>
+      <div class="quote-cta-alt">Prefer WhatsApp? <a href="https://wa.me/13369539664" target="_blank" rel="noopener">Message Brandon</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="assets/tk_logo_transparent.png" alt="TK Holdings" />
+        <div class="line">TK Group (Holdings) Ltd.</div>
+        <div>USA Technical Sales Support, Americas</div>
+        <a class="mail" href="mailto:brandon@tkmold.com">brandon@tkmold.com</a>
+        <div class="addr">HK Main Board Listed, Stock Code 2283. Global moldmaking and molding, US based technical support.</div>
+        <div class="foot-social">
+          <a href="https://wa.me/13369539664" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 001.51 5.26l-.999 3.648 3.879-1.018zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+          <a href="mailto:brandon@tkmold.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h4>Capabilities</h4>
+        <a href="#capabilities">Automotive tooling</a>
+        <a href="#capabilities">Multi cavity and hot runner</a>
+        <a href="#capabilities">Packaging and thin wall</a>
+        <a href="#capabilities">Optical and lighting</a>
+        <a href="#capabilities">Precision machining</a>
+      </div>
+      <div class="fcol">
+        <h4>Markets</h4>
+        <a href="#capabilities">Medical</a>
+        <a href="#capabilities">Automotive</a>
+        <a href="#capabilities">Packaging</a>
+        <a href="#capabilities">Consumer electronics</a>
+        <a href="#capabilities">Industrial</a>
+      </div>
+      <div class="fcol">
+        <h4>Get started</h4>
+        <a href="#quote">Request a quote</a>
+        <a href="https://wa.me/13369539664" target="_blank" rel="noopener">Message on WhatsApp</a>
+        <a href="mailto:brandon@tkmold.com">Email Brandon</a>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+    <div class="foot-bottom wrap" style="padding-left:0;padding-right:0">Copyright © 2026 TK Group (Holdings) Ltd. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<!-- Request a Quote modal, delivers to brandon@tkmold.com via FormSubmit -->
+<dialog id="quoteModal" aria-label="Request a mold quote">
+  <div class="qm-head">
+    <img src="assets/tk_logo_transparent.png" alt="TK Holdings" />
+    <div><div class="t">Request a Mold Quote</div><div class="s">Goes straight to Brandon Henderson, TK Mold USA</div></div>
+    <button class="x" id="qmClose" aria-label="Close">&times;</button>
+  </div>
+  <div class="qm-body">
+    <div class="qm-note">About two minutes <b style="color:var(--orange)">·</b> Goes straight to Brandon <b style="color:var(--orange)">·</b> No obligation</div>
+    <form id="qmForm" action="/api/quote" method="POST">
+      <input type="hidden" name="_subject" value="New mold quote request from tkmold.us" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" />
+      <div class="two">
+        <div class="field"><label>Full name <span class="req">*</span></label><input type="text" name="name" required /></div>
+        <div class="field"><label>Company <span class="req">*</span></label><input type="text" name="company" required /></div>
+      </div>
+      <div class="two">
+        <div class="field"><label>Work email <span class="req">*</span></label><input type="email" name="email" required /></div>
+        <div class="field"><label>Phone</label><input type="tel" name="phone" /></div>
+      </div>
+      <div class="field"><label>Part or project name</label><input type="text" name="project" /></div>
+      <div class="two">
+        <div class="field"><label>Estimated annual volume</label>
+          <select name="annual_volume"><option value="">Select</option><option>Under 10k</option><option>10k to 100k</option><option>100k to 500k</option><option>500k to 1M</option><option>Over 1M</option><option>Not sure yet</option></select>
+        </div>
+        <div class="field"><label>Material</label><input type="text" name="material" placeholder="e.g. PC ABS, PP, nylon" /></div>
+      </div>
+      <div class="field"><label>Project details</label><textarea name="message" placeholder="Tolerances, cavitation, texture, target price, timeline, anything relevant"></textarea></div>
+      <button class="btn btn-primary" type="submit" id="qmSubmit">Send my request</button>
+      <p class="qm-fine">We reply personally. Your information is never sold or shared.</p>
+    </form>
+    <div class="qm-success" id="qmSuccess" hidden>
+      <div class="chk">&check;</div>
+      <h3>Request sent</h3>
+      <p>Thanks. Brandon has your details and will reply shortly. Prefer to talk now? <a href="https://wa.me/13369539664" target="_blank" rel="noopener" style="color:var(--orange);font-weight:700">Message on WhatsApp</a>.</p>
+    </div>
+  </div>
+</dialog>
+
+<!-- Floating contact rail -->
+<div class="rail" id="rail">
+  <button class="chat" id="chatOpen" aria-label="Chat with TK">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+  </button>
+  <a class="wa" href="https://wa.me/13369539664?text=Hi%20Brandon%2C%20I%27d%20like%20to%20talk%20about%20a%20mold%20program." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 001.51 5.26l-.999 3.648 3.879-1.018zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+  <a class="up" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg></a>
+</div>
+
+<!-- Chat widget, routes to OpenClaw Telegram bot via relay -->
+<div class="cw" id="cw" role="dialog" aria-label="Chat with TK Mold USA">
+  <div class="cw-head">
+    <img class="cw-av" src="assets/site/brandon.jpg" alt="Brandon Henderson" />
+    <div>
+      <div class="t">TK Mold USA</div>
+      <div class="s">Brandon replies personally</div>
+    </div>
+    <button class="x" id="chatClose" aria-label="Close chat">&times;</button>
+  </div>
+  <div class="cw-body" id="cwBody">
+    <div class="msg bot">Hi, thanks for stopping by. Tell me about your part or program and I will get you a quote. What can I help with?</div>
+  </div>
+  <div class="cw-foot">
+    <input id="cwEmail" type="email" placeholder="Your email so Brandon can reply" />
+    <div class="cw-row">
+      <input id="cwInput" type="text" placeholder="Type your message" />
+      <button class="cw-send" id="cwSend">Send</button>
+    </div>
+    <div class="cw-alt">Prefer WhatsApp? <a href="https://wa.me/13369539664" target="_blank" rel="noopener">Message Brandon</a></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Relay endpoint that forwards chat messages to the OpenClaw Telegram bot.
+  // Set this to the TK relay URL once it is live. Leave empty to use the WhatsApp fallback.
+  var CHAT_ENDPOINT = "/api/chat";
+
+  var cw=document.getElementById('cw'), rail=document.getElementById('rail');
+  var openBtn=document.getElementById('chatOpen'), closeBtn=document.getElementById('chatClose');
+  var body=document.getElementById('cwBody'), input=document.getElementById('cwInput');
+  var email=document.getElementById('cwEmail'), send=document.getElementById('cwSend');
+  function openChat(){cw.classList.add('open');rail.style.display='none';setTimeout(function(){input.focus();},80);}
+  function closeChat(){cw.classList.remove('open');rail.style.display='flex';}
+  openBtn.addEventListener('click',openChat);
+  closeBtn.addEventListener('click',closeChat);
+  function addMsg(t,who){var d=document.createElement('div');d.className='msg '+who;d.textContent=t;body.appendChild(d);body.scrollTop=body.scrollHeight;}
+  function botReply(t){setTimeout(function(){addMsg(t,'bot');},500);}
+  async function submit(){
+    var text=input.value.trim(); if(!text) return;
+    addMsg(text,'me'); input.value='';
+    var payload={message:text,email:(email.value||'').trim(),page:location.href,ts:Date.now()};
+    var delivered=false;
+    if(CHAT_ENDPOINT){
+      try{
+        var r=await fetch(CHAT_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+        delivered=r.ok;
+      }catch(e){delivered=false;}
+    }
+    if(delivered){ botReply("Got it. Brandon has your message and will reply shortly" + (payload.email?" at "+payload.email:", add your email above so he can reach you") + "."); }
+    else{ botReply("Thanks. The fastest way to reach Brandon right now is WhatsApp. Tap Message Brandon just below, or leave your email and he will follow up."); }
+  }
+  send.addEventListener('click',submit);
+  input.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();submit();}});
+
+  // Request a Quote modal -> FormSubmit -> brandon@tkmold.com
+  var modal=document.getElementById('quoteModal');
+  var qmForm=document.getElementById('qmForm'), qmSuccess=document.getElementById('qmSuccess'), qmSubmit=document.getElementById('qmSubmit');
+  function openQuote(){
+    qmForm.hidden=false; qmSuccess.hidden=true; qmSubmit.textContent='Send my request'; qmSubmit.disabled=false;
+    if(modal.showModal){ if(!modal.open) modal.showModal(); } else { location.hash='#quote'; }
+  }
+  document.querySelectorAll('a[href="#quote"], .js-quote').forEach(function(el){ el.addEventListener('click',function(e){ e.preventDefault(); openQuote(); }); });
+  document.getElementById('qmClose').addEventListener('click',function(){ modal.close(); });
+  modal.addEventListener('click',function(e){ var r=modal.getBoundingClientRect(); if(e.clientY<r.top||e.clientY>r.bottom||e.clientX<r.left||e.clientX>r.right) modal.close(); });
+  qmForm.addEventListener('submit',async function(e){
+    e.preventDefault();
+    qmSubmit.textContent='Sending...'; qmSubmit.disabled=true;
+    try{
+      var fd=new FormData(qmForm), obj={}; fd.forEach(function(v,k){ obj[k]=v; });
+      var r=await fetch(qmForm.action,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(obj)});
+      var data={}; try{ data=await r.json(); }catch(e){}
+      var ok=r.ok && (data.ok===true || data.success===true || data.success==='true');
+      if(ok){ qmForm.hidden=true; qmSuccess.hidden=false; }
+      else{ qmSubmit.textContent='Send my request'; qmSubmit.disabled=false; alert('We could not send that just now. Please email brandon@tkmold.com or tap WhatsApp and Brandon will jump right on it.'); }
+    }catch(err){ qmSubmit.textContent='Send my request'; qmSubmit.disabled=false; alert('Network issue. Please email brandon@tkmold.com or use WhatsApp.'); }
+  });
+})();
+</script>
+
+</body>
+</html>

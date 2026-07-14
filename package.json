@@ -1,0 +1,9 @@
+{
+  "name": "tkmold-us",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TK Mold USA landing page (tkmold.us) with RFQ email + chat relay serverless functions.",
+  "dependencies": {
+    "nodemailer": "^6.9.14"
+  }
+}
