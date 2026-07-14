@@ -103,6 +103,18 @@
   .prod-tags span{font-size:.79rem;font-weight:600;color:var(--body);background:var(--bg-soft);border:1px solid var(--line);border-radius:999px;padding:.34rem .72rem}
   @media(prefers-reduced-motion:reduce){.prod-card{transition:none}.prod-card:hover{transform:none}}
 
+  /* Cutting edge technology */
+  .tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .tech-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);transition:transform .28s var(--ease-out),box-shadow .28s var(--ease-out)}
+  .tech-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+  .tech-img{aspect-ratio:16/9;overflow:hidden;background:#0f1216}
+  .tech-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out)}
+  .tech-card:hover .tech-img img{transform:scale(1.05)}
+  .tech-body{padding:22px 24px 26px}
+  .tech-body h3{font-size:1.2rem;margin-bottom:9px;letter-spacing:-.01em}
+  .tech-body p{color:var(--body);font-size:.96rem}
+  @media(prefers-reduced-motion:reduce){.tech-card,.tech-img img{transition:none}.tech-card:hover{transform:none}.tech-card:hover .tech-img img{transform:none}}
+
   /* Industry category cards: lifestyle photo, mold render, orange caption (TK format) */
   .markets{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
   .mkt{display:flex;flex-direction:column;border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:var(--shadow);transition:transform .3s var(--ease-out),box-shadow .3s var(--ease-out)}
@@ -266,6 +278,7 @@
   }
   @media(max-width:1024px){
     .prod-grid{grid-template-columns:repeat(2,1fr)}
+    .tech-grid{grid-template-columns:1fr}
   }
   @media(max-width:900px){
     .stocktag{display:none}
