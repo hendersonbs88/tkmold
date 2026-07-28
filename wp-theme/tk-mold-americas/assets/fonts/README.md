@@ -1,1 +1,0 @@
-Manrope (400/600/700) and Inter (400/600) to be added as self-hosted woff2, or registered via the WP Font Library in the site editor. @font-face declarations go in ../css/theme.css when binaries are added.
