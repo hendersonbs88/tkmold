@@ -10,6 +10,32 @@
 
 ---
 
+## Architecture reality (discovered 2026-07-28 — overrides "provision fresh WP" assumptions)
+
+`tkmold.us` is a static frontend on **Vercel** (project `tkmold`, A record `76.76.21.21`) with an
+**existing headless WordPress backend already live** at `red-partridge-913204.hostingersite.com`
+(Hostinger Business, same account as MoldMinds; shared host IP `145.223.124.212`) powering
+`/blog` via a Vercel `/api/wp` proxy. So:
+
+- **Do NOT provision a new WP.** Build the theme on the existing `red-partridge-913204.hostingersite.com`
+  install. Its preview URL is the staging URL. Blog posts already exist there.
+- **Staging = `https://red-partridge-913204.hostingersite.com`.** Note: this preview host refuses
+  non-browser TLS/UA connections (curl gets `http_code=000`). Use **CDP-attached real Chrome** for
+  wp-admin work and the WP **REST API with the app password** for content ops (from a context the
+  host accepts). Deploy the theme via **SFTP/SSH or the wp-admin theme uploader**.
+- **Cutover = DNS A-record swap** for `tkmold.us`: `76.76.21.21` (Vercel) -> `145.223.124.212`
+  (Hostinger), then set WP `siteurl`/`home` to `https://tkmold.us`. DNS is managed at Hostinger.
+- **Rollback = the Vercel deploy stays;** revert the A record to `76.76.21.21`.
+- **Never touch** MX/SPF/DKIM/DMARC or the GSC TXT `google-site-verification=6mmTXS9YGyHNMh8IERdjcN-kJOG9IQp_kKfzJWeSeGA`.
+- **Preserve analytics:** re-add GA4 gtag `G-8SB3MDYXRM` in the theme `<head>`; resubmit the WP sitemap in GSC.
+- **Credentials:** `G:\Hendo88\Credentials.md`, section "TK Mold USA WordPress" (admin
+  `hendersonbs88@gmail.com` / `Hennybs1988!`, REST app password `tk-automation`).
+
+Tasks 0.1, 0.2, 3.1 (pages), 3.2 (blog already present), and 4.4 (cutover) are adjusted by the
+above. The theme-building tasks (Phases 1-2) are unaffected.
+
+---
+
 ## File Structure
 
 Theme lives in the existing `tkmold` repo (single initiative folder per estate rules):

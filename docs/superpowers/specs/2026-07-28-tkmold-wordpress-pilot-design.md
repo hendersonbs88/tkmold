@@ -11,6 +11,29 @@ that Claude Code designs and maintains as git-tracked theme files. Preserve the 
 exactly. Prove the theme-building and cutover workflow here so it can be reused to swap the
 MoldMinds frontend in phase 2 without touching its WordPress backend or automation pipelines.
 
+## 1a. Architecture reality (discovered during Phase 0, 2026-07-28)
+
+The current `tkmold.us` is NOT a plain static site. It is a static HTML frontend deployed on
+**Vercel** (project `tkmold`, A record `76.76.21.21`) with an **existing headless WordPress
+backend already live** at `red-partridge-913204.hostingersite.com` (Hostinger Business, same
+account as MoldMinds, shared host IP `145.223.124.212`) powering `tkmold.us/blog` via a Vercel
+`/api/wp` proxy. This mirrors the MoldMinds architecture.
+
+Consequences (these override the "fresh provisioning" assumptions below):
+- **No new WP install.** Build the `tk-mold-americas` block theme on the existing
+  `red-partridge-913204.hostingersite.com` WP. Its preview URL IS the staging URL.
+- **Blog content already exists** in that WP; it becomes native (no longer headless) after cutover.
+- **Cutover = DNS A-record swap** for `tkmold.us` from `76.76.21.21` (Vercel) to
+  `145.223.124.212` (Hostinger), plus setting WP `siteurl`/`home` to `https://tkmold.us`.
+- **Rollback = the Vercel deploy stays intact;** revert the A record to `76.76.21.21`.
+- **Do not touch** the MX/SPF/DKIM/DMARC records or the GSC verification TXT
+  (`google-site-verification=6mmTXS9YGyHNMh8IERdjcN-kJOG9IQp_kKfzJWeSeGA`). An A-record change
+  does not affect mail (MX is independent) or domain-property GSC verification (TXT stays).
+- **Preserve analytics:** re-add the GA4 gtag (`G-8SB3MDYXRM`) into the block theme `<head>`,
+  and keep the sitemap at `/sitemap.xml` (WP will generate its own; resubmit in GSC).
+- Credentials for the existing WP are in `G:\Hendo88\Credentials.md` (section "TK Mold USA
+  WordPress"): admin `hendersonbs88@gmail.com`, app password for REST, wp-admin URL.
+
 ## 2. Decisions locked (2026-07-28)
 
 - **Hosting:** self-hosted WordPress on Hostinger (reuse existing infra).
