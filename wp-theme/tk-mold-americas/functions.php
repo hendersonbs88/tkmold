@@ -15,3 +15,17 @@ add_action('pre_get_posts', function ($q) {
         $q->set('posts_per_page', 12);
     }
 });
+
+// Restore the original SEO document titles (the static site had custom <title> tags).
+add_filter('pre_get_document_title', function ($title) {
+    if (is_front_page()) {
+        return 'China Injection Mold Manufacturer, US Support | TK Mold USA';
+    }
+    if (is_home()) {
+        return 'Blog | TK Mold USA';
+    }
+    return $title;
+});
+
+// Use " | TK Mold USA" as the title separator/suffix on posts and pages.
+add_filter('document_title_separator', function () { return '|'; });
