@@ -1,0 +1,19 @@
+/* Section title: orange uppercase with thin underline rule (from TK decks) */
+.tk-section-title {
+  color: var(--wp--preset--color--tk-orange);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  border-bottom: 2px solid var(--wp--preset--color--tk-orange);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+/* Forward-chevron accent bar */
+.tk-chevron-bar {
+  height: 8px;
+  background: repeating-linear-gradient(135deg,
+    var(--wp--preset--color--tk-orange) 0 16px,
+    transparent 16px 28px);
+}
+/* Tagline signature */
+.tk-tagline { font-style: italic; color: var(--wp--preset--color--charcoal); }

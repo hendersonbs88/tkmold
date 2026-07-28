@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "layout": { "contentSize": "760px", "wideSize": "1200px" },
+    "appearanceTools": true,
+    "color": {
+      "palette": [
+        { "slug": "tk-orange", "color": "#F07F1A", "name": "TK Orange" },
+        { "slug": "charcoal", "color": "#1A1A1A", "name": "Charcoal" },
+        { "slug": "gray", "color": "#808080", "name": "Gray" },
+        { "slug": "white", "color": "#FFFFFF", "name": "White" },
+        { "slug": "off-white", "color": "#F5F5F3", "name": "Off White" }
+      ],
+      "custom": false
+    },
+    "typography": {
+      "fontFamilies": [
+        { "slug": "manrope", "name": "Manrope", "fontFamily": "Manrope, system-ui, sans-serif" },
+        { "slug": "inter", "name": "Inter", "fontFamily": "Inter, system-ui, sans-serif" }
+      ],
+      "fontSizes": [
+        { "slug": "small", "size": "0.9rem", "name": "Small" },
+        { "slug": "medium", "size": "1.125rem", "name": "Medium" },
+        { "slug": "large", "size": "1.75rem", "name": "Large" },
+        { "slug": "x-large", "size": "2.75rem", "name": "XL" },
+        { "slug": "xx-large", "size": "3.75rem", "name": "XXL" }
+      ],
+      "fluid": true
+    },
+    "spacing": {
+      "spacingSizes": [
+        { "slug": "40", "size": "1rem", "name": "1" },
+        { "slug": "50", "size": "1.5rem", "name": "2" },
+        { "slug": "60", "size": "2.5rem", "name": "3" },
+        { "slug": "70", "size": "4rem", "name": "4" },
+        { "slug": "80", "size": "6rem", "name": "5" }
+      ]
+    }
+  },
+  "styles": {
+    "color": { "background": "var(--wp--preset--color--white)", "text": "var(--wp--preset--color--charcoal)" },
+    "typography": { "fontFamily": "var(--wp--preset--font-family--manrope)", "lineHeight": "1.6" },
+    "elements": {
+      "heading": { "typography": { "fontWeight": "700", "lineHeight": "1.15" }, "color": { "text": "var(--wp--preset--color--charcoal)" } },
+      "link": { "color": { "text": "var(--wp--preset--color--tk-orange)" } },
+      "button": {
+        "color": { "background": "var(--wp--preset--color--tk-orange)", "text": "var(--wp--preset--color--white)" },
+        "border": { "radius": "2px" },
+        "typography": { "fontWeight": "700" }
+      }
+    }
+  },
+  "customTemplates": [
+    { "name": "front-page", "title": "Home" }
+  ],
+  "templateParts": [
+    { "name": "header", "title": "Header", "area": "header" },
+    { "name": "footer", "title": "Footer", "area": "footer" }
+  ]
+}
