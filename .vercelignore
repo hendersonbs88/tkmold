@@ -3,3 +3,6 @@ docs/
 marketing/
 claude-design/
 README.md
+
+# WordPress pilot theme source, not part of the static site
+wp-theme/

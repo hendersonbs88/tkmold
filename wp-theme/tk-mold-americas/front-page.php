@@ -1,0 +1,642 @@
+<?php get_header(); ?>
+<a id="top"></a>
+<section class="hero">
+  <div class="bg">
+    <video autoplay="" muted="" loop="" playsinline="" preload="auto" poster="/assets/site/hero_poster.jpg">
+      <source src="/assets/site/tk_hero.webm" type="video/webm">
+      <source src="/assets/site/tk_hero.mp4" type="video/mp4">
+      <img src="/assets/site/hero_poster.jpg" alt="TK Group injection molding machine running a mold">
+    </video>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow"><span class="dot"></span>US Based Technical Support <span class="dot"></span> China Manufacturing</div>
+    <h1>China injection mold manufacturer. <span>US based support.</span></h1>
+    <p class="lead">TK Group builds precision injection molds in China, backed by a technical team here in the United States. Send your part and get a real quote.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#quote">Request a Mold Quote</a>
+      <a class="btn btn-wa" href="https://wa.me/13369539664?text=Hi%20Brandon%2C%20I%27d%20like%20to%20talk%20about%20a%20mold%20program." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 001.51 5.26l-.999 3.648 3.879-1.018zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+        Message on WhatsApp
+      </a>
+      <a class="btn btn-outline" href="#capabilities">See Capabilities</a>
+    </div>
+    <p class="hero-note">Free DFM review with every quote <b>·</b> You approve T1 before production <b>·</b> No obligation</p>
+    <div class="chips">
+      <span class="chip">Precision moldmaking</span>
+      <span class="chip">Multi cavity and hot runner</span>
+      <span class="chip">DFM on every RFQ</span>
+      <span class="chip">Medical, automotive, consumer</span>
+    </div>
+  </div>
+</section>
+
+<div class="trusted">
+  <div class="wrap">
+    <p>Tooling and molding trusted by leading brands</p>
+    <div class="logos">
+      <img src="/assets/logos/spacex.svg" alt="SpaceX" loading="lazy">
+      <img src="/assets/logos/pg.svg" alt="Procter &amp; Gamble" loading="lazy">
+      <img src="/assets/site/logo_3m.jpg" alt="3M" loading="lazy">
+      <img src="/assets/site/logo_bosch.jpg" alt="Bosch" loading="lazy">
+      <img src="/assets/site/logo_philips.jpg" alt="Philips" loading="lazy">
+      <img src="/assets/site/logo_nespresso.jpg" alt="Nespresso" loading="lazy">
+      <img src="/assets/site/logo_abb.jpg" alt="ABB" loading="lazy">
+    </div>
+  </div>
+</div>
+
+<section class="anniv">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">42 years</div>
+      <h2>Four decades of injection molds that keep customers successful</h2>
+      <p>TK Group has built precision tooling for more than 40 years. Watch the story behind the molds.</p>
+    </div>
+    <div class="video-frame">
+      <video controls="" preload="none" playsinline="" poster="/assets/site/anniversary_poster.jpg">
+        <source src="/assets/site/tk_anniversary.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">What we build</div>
+      <h2>Products we build molds for</h2>
+      <p>From closures and packaging to personal care, medical, and consumer electronics, TK builds the tooling and molds the parts for the brands you know, with a US based team on every program.</p>
+    </div>
+    <div class="prod-grid">
+      <article class="prod-card">
+        <div class="prod-img"><img src="/assets/site/prod_pkg.jpg" alt="Molded caps, closures and packaging components" loading="lazy"></div>
+        <div class="prod-body"><h3>Consumer Packaging</h3><div class="prod-tags"><span>Caps and closures</span><span>Pumps</span><span>Jars</span><span>Aerosol</span><span>Valve inserts</span></div></div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-img"><img src="/assets/site/prod_fnb.jpg" alt="Molded food and beverage bottles and cartons" loading="lazy"></div>
+        <div class="prod-body"><h3>Food and Beverage</h3><div class="prod-tags"><span>Milk</span><span>Infant formula</span><span>Drink and juice</span><span>Soy sauce</span><span>Thin wall</span></div></div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-img"><img src="/assets/site/prod_pcare.jpg" alt="Molded personal care devices" loading="lazy"></div>
+        <div class="prod-body"><h3>Personal Care</h3><div class="prod-tags"><span>Shavers</span><span>Oral care</span><span>Groomers</span><span>Beauty devices</span></div></div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-img"><img src="/assets/site/prod_med.jpg" alt="Molded medical disposables" loading="lazy"></div>
+        <div class="prod-body"><h3>Medical</h3><div class="prod-tags"><span>Syringes</span><span>Vials</span><span>Nasal</span><span>Diagnostics</span></div></div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-img"><img src="/assets/site/prod_elec.jpg" alt="Molded consumer electronics housings" loading="lazy"></div>
+        <div class="prod-body"><h3>Consumer Electronics</h3><div class="prod-tags"><span>Housings</span><span>Wearables</span><span>Audio</span><span>Multi shot</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="capabilities">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Capabilities</div>
+      <h2>Injection molds proven across every major industry</h2>
+      <p>From consumer electronics to automotive, TK designs and runs high cavity production tooling for the markets our customers compete in.</p>
+    </div>
+    <div class="markets">
+      <article class="mkt">
+        <div class="mkt-photo"><img src="/assets/site/cat_consumer_photo.jpg" alt="Consumer wearing headphones" loading="lazy" width="313" height="197"></div>
+        <div class="mkt-mold"><img src="/assets/site/cat_consumer_mold.jpg" alt="Multi cavity consumer electronics injection mold" loading="lazy" width="542" height="444"></div>
+        <div class="mkt-cap">
+          <h3>Consumer Electronics Molds</h3>
+          <p>Multi cavity, ultra precision machining, 50+ proven similar molds.</p>
+        </div>
+      </article>
+      <article class="mkt">
+        <div class="mkt-photo"><img src="/assets/site/cat_packaging_photo.jpg" alt="Person drinking from a plastic bottle" loading="lazy" width="319" height="197"></div>
+        <div class="mkt-mold"><img src="/assets/site/cat_packaging_mold.jpg" alt="High cavitation packaging injection mold" loading="lazy" width="292" height="291"></div>
+        <div class="mkt-cap">
+          <h3>Packaging Molds</h3>
+          <p>Single and dual shot molding, quick changeover, short cycles, fast prototyping.</p>
+        </div>
+      </article>
+      <article class="mkt">
+        <div class="mkt-photo"><img src="/assets/site/cat_medical_photo.jpg" alt="Lab technician testing a sample" loading="lazy" width="319" height="194"></div>
+        <div class="mkt-mold"><img src="/assets/site/cat_medical_mold.jpg" alt="Modular medical injection mold" loading="lazy" width="333" height="326"></div>
+        <div class="mkt-cap">
+          <h3>Medical Molds</h3>
+          <p>Modular design for short cycle, high stability, and rapid development and trial.</p>
+        </div>
+      </article>
+      <article class="mkt">
+        <div class="mkt-photo"><img src="/assets/site/cat_personalcare_photo.jpg" alt="Man using an electric shaver" loading="lazy" width="426" height="271"></div>
+        <div class="mkt-mold"><img src="/assets/site/cat_personalcare_mold.jpg" alt="Personal care injection mold with hot runner" loading="lazy" width="503" height="359"></div>
+        <div class="mkt-cap">
+          <h3>Personal Care Molds</h3>
+          <p>ESI and R&amp;D innovation with efficient mold and part design for global leaders.</p>
+        </div>
+      </article>
+      <article class="mkt">
+        <div class="mkt-photo"><img src="/assets/site/cat_automotive_photo.jpg" alt="Automotive racing vehicle on track" loading="lazy" width="314" height="189"></div>
+        <div class="mkt-mold"><img src="/assets/site/cat_automotive_mold.jpg" alt="Mid and large automotive injection mold" loading="lazy" width="275" height="251"></div>
+        <div class="mkt-cap">
+          <h3>Automotive Molds</h3>
+          <p>High gloss, dual color, mid and large molds, large scale production, serving top 100 clients.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="customers" class="soft">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="kicker">Customers</div>
+      <h2>The brands behind our injection molds</h2>
+      <p>TK builds tooling and molds parts for many of the world's most recognized consumer, industrial, and healthcare brands.</p>
+    </div>
+    <div class="logo-wall">
+      <span class="logo"><img src="/assets/logos/brand_google.png" alt="Google" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_meta.png" alt="Meta" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_amazon.png" alt="Amazon" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_dyson.png" alt="Dyson" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_bosch.png" alt="Bosch" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_philips.png" alt="Philips" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_nestle.png" alt="Nestle" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_pg.png" alt="Procter and Gamble" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_unilever.png" alt="Unilever" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_colgate.png" alt="Colgate" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_jnj.png" alt="Johnson and Johnson" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_henkel.png" alt="Henkel" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_pepsico.png" alt="PepsiCo" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_roche.png" alt="Roche" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_danaher.png" alt="Danaher" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_abb.png" alt="ABB" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_schneider.png" alt="Schneider Electric" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_eaton.png" alt="Eaton" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_grohe.png" alt="Grohe" loading="lazy"></span>
+      <span class="logo"><img src="/assets/logos/brand_jabra.png" alt="Jabra" loading="lazy"></span>
+    </div>
+  </div>
+</section>
+
+<section class="facility">
+  <div class="bg"><img src="/assets/site/facility.jpg" alt="TK Group China injection mold manufacturing facility" loading="lazy"></div>
+  <div class="wrap inner">
+    <h2>A China injection mold manufacturer at global scale</h2>
+    <p>TK Group runs large scale precision moldmaking and injection molding facilities in China, building tooling for automotive, medical, packaging, consumer, and electronics customers worldwide. You get that China manufacturing scale with a US based engineer managing your program.</p>
+    <div class="fpoints">
+      <span>Precision moldmaking</span>
+      <span>Quality managed manufacturing</span>
+      <span>Global delivery</span>
+      <span>US technical support</span>
+    </div>
+  </div>
+</section>
+
+<section id="technology">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Cutting edge technology</div>
+      <h2>Molding technology most mold shops cannot offer</h2>
+      <p>TK invests in the processes that decide part quality and cost, so your program launches faster and runs cleaner at volume.</p>
+    </div>
+    <div class="tech-grid">
+      <article class="tech-card">
+        <div class="tech-img"><img src="/assets/site/tech_cooling.jpg" alt="3D metal printer for conformal cooling inserts" loading="lazy" width="544" height="306"></div>
+        <div class="tech-body">
+          <h3>Conformal cooling</h3>
+          <p>3D printed conformal cooling channels follow the part geometry for up to 30 percent higher cooling efficiency, shorter cycles, and less warpage.</p>
+        </div>
+      </article>
+      <article class="tech-card">
+        <div class="tech-img"><img src="/assets/site/tech_rhcm.jpg" alt="Rapid heat cycle molding tool running" loading="lazy" width="544" height="305"></div>
+        <div class="tech-body">
+          <h3>Rapid heat cycle molding</h3>
+          <p>RHCM delivers high gloss, weld line free surfaces and reliable thin walls on cosmetic parts, with fewer stress marks and secondary steps.</p>
+        </div>
+      </article>
+      <article class="tech-card">
+        <div class="tech-img"><img src="/assets/site/tech_automation.jpg" alt="Automated in mold placement and inspection cell" loading="lazy" width="544" height="306"></div>
+        <div class="tech-body">
+          <h3>Lean automation</h3>
+          <p>Automated cells handle in mold placement, assembly, inspection, and secondary processing for consistent quality at production volume.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="molding" class="soft">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Molding at scale</div>
+      <h2>From injection mold to finished molded part</h2>
+      <p>TK does not stop at the tool. Behind every mold is a high volume molding operation that runs the parts, the finishing, and the quality for many of the world's leading brands.</p>
+    </div>
+    <div class="ms-top">
+      <div class="ms-shot"><img src="/assets/site/mold_machinehall.jpg" alt="Row of TK injection molding machines on the production floor" loading="lazy" width="930" height="398"></div>
+      <div class="ms-stats">
+        <div class="ms-stat"><b>500+</b><span>Injection molding machines</span></div>
+        <div class="ms-stat"><b>6T to 550T</b><span>Clamp force range</span></div>
+        <div class="ms-stat"><b>7,000</b><span>Tons of resin molded per year</span></div>
+        <div class="ms-stat"><b>2K 3K LSR</b><span>Multi shot and silicone</span></div>
+      </div>
+    </div>
+    <div class="ms-caps">
+      <div class="ms-cap"><h3>Multi shot molding</h3><p>Double and triple shot parts on the AUI platform for soft touch and multi color housings.</p></div>
+      <div class="ms-cap"><h3>LSR and silicone</h3><p>Liquid silicone over molding on engineering plastics and metal for sealed, IP rated parts.</p></div>
+      <div class="ms-cap"><h3>IML and IMD</h3><p>In mold labeling and decoration for finished cosmetic surfaces straight out of the tool.</p></div>
+      <div class="ms-cap"><h3>In mold electronics</h3><p>Smart molded structures that integrate electronics, mechanics, and surface into one part.</p></div>
+      <div class="ms-cap"><h3>Precise insert molding</h3><p>Metal, glass, ceramic, and PCB inserts molded in place and qualified to IP68.</p></div>
+      <div class="ms-cap"><h3>Secondary finishing</h3><p>Spray, print, NCVM, laser etch, and ultrasonic welding, all under one roof.</p></div>
+    </div>
+    <p class="ms-brands">Molding for <b>Sonos, Bose, Google, Meta, Amazon, HP, Sony, Harman, Fitbit, TCL,</b> and <b>Verifone</b>, among others.</p>
+  </div>
+</section>
+
+<section id="imse" class="imse-sec">
+  <div class="wrap">
+    <div class="sec-head imse-head">
+      <div class="kicker">In mold electronics</div>
+      <h2>One molded part where others use sixty</h2>
+      <p>TK builds IMSE smart molded structures that integrate the electronics, the mechanics, and the finished surface into a single part, for lighter, thinner, and cleaner products.</p>
+    </div>
+    <div class="imse-compare">
+      <article class="imse-panel">
+        <div class="imse-tag">Conventional electronics</div>
+        <div class="imse-img"><img src="/assets/site/imse_conventional.jpg" alt="Conventional electronics assembly of many separate parts" loading="lazy" width="901" height="444"></div>
+        <ul class="imse-stats">
+          <li><b>64 parts</b> plus a large PCBA</li>
+          <li><b>20 plus</b> injection molding tools</li>
+          <li><b>45 mm</b> deep, 650 grams</li>
+        </ul>
+      </article>
+      <div class="imse-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </div>
+      <article class="imse-panel is-featured">
+        <div class="imse-tag">IMSE smart molded structure</div>
+        <div class="imse-img"><img src="/assets/site/imse_smart.jpg" alt="IMSE smart molded structure with integrated lighting and electronics" loading="lazy" width="289" height="433"></div>
+        <ul class="imse-stats">
+          <li><b>1 molded part</b> and a small PCBA</li>
+          <li><b>3 mm</b> thick, 90 percent thinner</li>
+          <li><b>150 grams</b>, 70 percent lighter, 60 percent less CO2</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="support" class="soft channel">
+  <div class="wrap channel-grid">
+    <div class="headshot"><span class="ring"></span><img src="/assets/site/brandon.jpg" alt="Brandon Henderson, Technical Sales Support Manager, Americas"></div>
+    <div>
+      <div class="kicker">Your US support channel</div>
+      <h2>Brandon Henderson, your US based mold support</h2>
+      <div class="role">Technical Sales Support Manager, Americas</div>
+      <p>Your direct line to a China injection mold manufacturer, with US based support. Based in North Carolina, Brandon is your single point of contact from first RFQ through first article and production, translating your program into clear tooling scope, pricing, and timelines. Behind him stands TK Group, a Hong Kong Main Board listed manufacturer, Stock Code 2283.</p>
+      <ul class="creds">
+        <li>15+ years in injection molding</li>
+        <li>Journeyman Tool &amp; Die</li>
+        <li>CPSP certified</li>
+        <li>Fortune 500 tooling program experience</li>
+        <li>Consumer, healthcare, and automotive</li>
+        <li>Based in North Carolina, USA</li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#quote">Talk to Brandon</a>
+        <a class="btn btn-li" href="https://www.linkedin.com/in/brandonhenderson88/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path></svg>
+          Connect on LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>From your part to a China built mold in four steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><b>1</b><h3>Send your part and specs</h3><p>Share your model, volumes, material, and target dates.</p></div>
+      <div class="step"><b>2</b><h3>DFM and quote</h3><p>We review manufacturability and return clear pricing and lead time.</p></div>
+      <div class="step"><b>3</b><h3>Tooling build and T1</h3><p>The mold is built and T1 samples are shipped for your approval.</p></div>
+      <div class="step"><b>4</b><h3>Approval and production</h3><p>You approve first article, then production runs to spec.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="recognition" class="soft">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Recognition</div>
+      <h2>Awarded by the customers we mold for</h2>
+      <p>TK's molding operation is recognized by global brands and industry bodies for quality, technology, and delivery.</p>
+    </div>
+    <div class="rec-grid">
+      <div class="rec-col">
+        <h3>Customer awards</h3>
+        <ul>
+          <li>SanDisk Best in Class Supplier</li>
+          <li>Mann and Hummel Technology Excellence 2024</li>
+          <li>Jabra and GN Quality Supplier Award</li>
+          <li>Philips Sustainability Improvement Award</li>
+          <li>Luxshare Excellent Technology Supplier</li>
+        </ul>
+      </div>
+      <div class="rec-col">
+        <h3>Certifications and honors</h3>
+        <ul>
+          <li>National High Tech Enterprise</li>
+          <li>Shenzhen Customs AEO Advanced Certification</li>
+          <li>SPI United States Member</li>
+          <li>Hong Kong Mold Design Gold Award</li>
+          <li>China Key Precision Plastic Mold Enterprise</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Questions</div>
+      <h2>Sourcing an injection mold from China, answered</h2>
+      <p>The questions US buyers ask before they trust a China injection mold manufacturer with a program.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" open="">
+        <summary>How much does injection mold tooling cost in China compared to the US?</summary>
+        <div class="faq-a"><p>A China built injection mold typically lands well below a comparable US built mold, which is why so many programs source tooling from China in the first place. Exact pricing depends on part size, cavitation, tolerances, and steel grade, so every quote from TK includes a free DFM review and a line item breakdown before any steel is cut. Send your part and you get a real number, not a range.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>How long does it take to build an injection mold in China?</summary>
+        <div class="faq-a"><p>Lead time is driven by cavitation, part complexity, and the finishing the part requires. TK builds the tooling in China, runs T1 samples, and holds production until you approve those samples. Your timeline is confirmed in writing at quote stage so there are no moving targets after the program starts.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I work with a China injection mold manufacturer that has US based support?</summary>
+        <div class="faq-a"><p>Yes, that is exactly what TK Mold USA is. Brandon Henderson is your technical contact in North Carolina, in your time zone, from RFQ through first article and into production. You get China manufacturing pricing with a US based engineer accountable to you the entire way, so there is no call center and no black box between you and the mold shop.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Where are TK's molds manufactured?</summary>
+        <div class="faq-a"><p>Molds are built in TK Group's own manufacturing facilities in China. TK Group (Holdings) Ltd. is a Hong Kong main board listed manufacturer (stock code 2283) with decades of precision tooling and molding for global brands. TK Mold USA is the US based technical support channel that puts a local engineer on every North American program.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Is there a minimum volume for injection molding with TK?</summary>
+        <div class="faq-a"><p>TK is built for production programs, from tooling only builds where you run the China built mold in your own plant, to full turnkey injection molding services at high volume. Share your annual volume with your part and Brandon will tell you honestly whether TK is the right fit before you invest a dollar.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>How is my design and IP protected when sourcing a mold from China?</summary>
+        <div class="faq-a"><p>Your part, drawings, and program details stay private. TK works under NDA on request, and nothing about your design is shared or reused. You approve T1 samples before any production, and the tooling you pay for is yours. A US based point of contact means accountability sits with a name you can reach, not an anonymous overseas inbox.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="quote" class="quote">
+  <div class="wrap quote-grid">
+    <div class="quote-copy">
+      <h2>Get a firm quote and a free DFM review</h2>
+      <p>Offshore tooling has a reputation for being a gamble. TK USA was built to take the gamble out. Send your part, see the pricing and the plan, and keep a US based engineer accountable to you from RFQ through first article.</p>
+      <div class="assure"><span class="tick">✓</span><p>You approve T1 samples before any production. Nothing ships until you sign off.</p></div>
+      <div class="assure"><span class="tick">✓</span><p>Every quote includes a free DFM review, before steel is cut.</p></div>
+      <div class="assure"><span class="tick">✓</span><p>Brandon replies personally. No call center, no black box.</p></div>
+      <div class="assure"><span class="tick">✓</span><p>No obligation. Your part and details stay private.</p></div>
+    </div>
+
+    <div class="quote-cta">
+      <h3>Start your RFQ in about two minutes</h3>
+      <p>Share your part and requirements. It lands straight in Brandon's inbox at TK Mold USA, and you get a real answer, not a runaround.</p>
+      <button class="btn btn-primary js-quote" type="button">Request a Mold Quote</button>
+      <div class="quote-cta-alt">Prefer WhatsApp? <a href="https://wa.me/13369539664" target="_blank" rel="noopener">Message Brandon</a></div>
+    </div>
+  </div>
+</section>
+<!-- Request a Quote modal, delivers to brandon@tkmold.com via FormSubmit -->
+<dialog id="quoteModal" aria-label="Request a mold quote">
+  <div class="qm-head">
+    <img src="/assets/tk_logo_transparent.png" alt="TK Holdings">
+    <div><div class="t">Request a Mold Quote</div><div class="s">Goes straight to Brandon Henderson, TK Mold USA</div></div>
+    <button class="x" id="qmClose" aria-label="Close">×</button>
+  </div>
+  <div class="qm-body">
+    <div class="qm-note">About two minutes <b style="color:var(--orange)">·</b> Goes straight to Brandon <b style="color:var(--orange)">·</b> No obligation</div>
+    <form id="qmForm" action="https://formsubmit.co/ajax/brandon@tkmold.com" method="POST">
+      <input type="hidden" name="_subject" value="New mold quote request from tkmold.us" style="">
+      <input type="hidden" name="_template" value="table" style="">
+      <input type="hidden" name="_captcha" value="false" style="">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" style="">
+      <div class="two">
+        <div class="field"><label>Full name <span class="req">*</span></label><input type="text" name="name" required="" style=""></div>
+        <div class="field"><label>Company <span class="req">*</span></label><input type="text" name="company" required="" style=""></div>
+      </div>
+      <div class="two">
+        <div class="field"><label>Work email <span class="req">*</span></label><input type="email" name="email" required="" style=""></div>
+        <div class="field"><label>Phone</label><input type="tel" name="phone" style=""></div>
+      </div>
+      <div class="field"><label>Part or project name</label><input type="text" name="project" style=""></div>
+      <div class="two">
+        <div class="field"><label>Estimated annual volume</label>
+          <select name="annual_volume"><option value="">Select</option><option>Under 10k</option><option>10k to 100k</option><option>100k to 500k</option><option>500k to 1M</option><option>Over 1M</option><option>Not sure yet</option></select>
+        </div>
+        <div class="field"><label>Material</label><input type="text" name="material" placeholder="e.g. PC ABS, PP, nylon" style=""></div>
+      </div>
+      <div class="field"><label>Project details</label><textarea name="message" placeholder="Tolerances, cavitation, texture, target price, timeline, anything relevant" style=""></textarea></div>
+      <button class="btn btn-primary" type="submit" id="qmSubmit">Send my request</button>
+      <p class="qm-fine">We reply personally. Your information is never sold or shared.</p>
+    </form>
+    <div class="qm-success" id="qmSuccess" hidden="">
+      <div class="chk">✓</div>
+      <h3>Request sent</h3>
+      <p>Thanks. Brandon has your details and will reply shortly. Prefer to talk now? <a href="https://wa.me/13369539664" target="_blank" rel="noopener" style="color:var(--orange);font-weight:700">Message on WhatsApp</a>.</p>
+    </div>
+  </div>
+</dialog>
+
+<!-- Floating contact rail -->
+<div class="rail" id="rail">
+  <button class="chat" id="chatOpen" aria-label="Chat with TK">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
+  </button>
+  <a class="wa" href="https://wa.me/13369539664?text=Hi%20Brandon%2C%20I%27d%20like%20to%20talk%20about%20a%20mold%20program." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 001.51 5.26l-.999 3.648 3.879-1.018zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+  </a>
+  <a class="up" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"></path></svg></a>
+</div>
+
+<!-- Chat widget, routes to OpenClaw Telegram bot via relay -->
+<div class="cw" id="cw" role="dialog" aria-label="Chat with TK Mold USA">
+  <div class="cw-head">
+    <img class="cw-av" src="/assets/site/brandon.jpg" alt="Brandon Henderson">
+    <div>
+      <div class="t">TK Mold USA</div>
+      <div class="s">Brandon replies personally</div>
+    </div>
+    <button class="x" id="chatClose" aria-label="Close chat">×</button>
+  </div>
+  <div class="cw-body" id="cwBody">
+    <div class="msg bot">Hi, thanks for stopping by. Tell me about your part or program and I will get you a quote. What can I help with?</div>
+  </div>
+  <div class="cw-foot">
+    <input id="cwEmail" type="email" placeholder="Your email so Brandon can reply" style="">
+    <div class="cw-row">
+      <input id="cwInput" type="text" placeholder="Type your message" style="">
+      <button class="cw-send" id="cwSend">Send</button>
+    </div>
+    <div class="cw-alt">Prefer WhatsApp? <a href="https://wa.me/13369539664" target="_blank" rel="noopener">Message Brandon</a></div>
+  </div>
+</div>
+<script>
+(function(){
+  // Relay endpoint that forwards chat messages to the OpenClaw Telegram bot.
+  // Set this to the TK relay URL once it is live. Leave empty to use the WhatsApp fallback.
+  var CHAT_ENDPOINT = "/api/chat";
+
+  var cw=document.getElementById('cw'), rail=document.getElementById('rail');
+  var openBtn=document.getElementById('chatOpen'), closeBtn=document.getElementById('chatClose');
+  var body=document.getElementById('cwBody'), input=document.getElementById('cwInput');
+  var email=document.getElementById('cwEmail'), send=document.getElementById('cwSend');
+  function openChat(){cw.classList.add('open');rail.style.display='none';setTimeout(function(){input.focus();},80);}
+  function closeChat(){cw.classList.remove('open');rail.style.display='flex';}
+  openBtn.addEventListener('click',openChat);
+  closeBtn.addEventListener('click',closeChat);
+  function addMsg(t,who){var d=document.createElement('div');d.className='msg '+who;d.textContent=t;body.appendChild(d);body.scrollTop=body.scrollHeight;}
+  function botReply(t){setTimeout(function(){addMsg(t,'bot');},500);}
+  async function submit(){
+    var text=input.value.trim(); if(!text) return;
+    addMsg(text,'me'); input.value='';
+    var payload={message:text,email:(email.value||'').trim(),page:location.href,ts:Date.now()};
+    var delivered=false;
+    if(CHAT_ENDPOINT){
+      try{
+        var r=await fetch(CHAT_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+        delivered=r.ok;
+      }catch(e){delivered=false;}
+    }
+    if(delivered){ botReply("Got it. Brandon has your message and will reply shortly" + (payload.email?" at "+payload.email:", add your email above so he can reach you") + "."); }
+    else{ botReply("Thanks. The fastest way to reach Brandon right now is WhatsApp. Tap Message Brandon just below, or leave your email and he will follow up."); }
+  }
+  send.addEventListener('click',submit);
+  input.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();submit();}});
+
+  // Request a Quote modal -> FormSubmit -> brandon@tkmold.com
+  var modal=document.getElementById('quoteModal');
+  var qmForm=document.getElementById('qmForm'), qmSuccess=document.getElementById('qmSuccess'), qmSubmit=document.getElementById('qmSubmit');
+  function openQuote(){
+    qmForm.hidden=false; qmSuccess.hidden=true; qmSubmit.textContent='Send my request'; qmSubmit.disabled=false;
+    if(modal.showModal){ if(!modal.open) modal.showModal(); } else { location.hash='#quote'; }
+  }
+  document.querySelectorAll('a[href="#quote"], .js-quote').forEach(function(el){ el.addEventListener('click',function(e){ e.preventDefault(); openQuote(); }); });
+  document.getElementById('qmClose').addEventListener('click',function(){ modal.close(); });
+  modal.addEventListener('click',function(e){ var r=modal.getBoundingClientRect(); if(e.clientY<r.top||e.clientY>r.bottom||e.clientX<r.left||e.clientX>r.right) modal.close(); });
+  qmForm.addEventListener('submit',async function(e){
+    e.preventDefault();
+    qmSubmit.textContent='Sending...'; qmSubmit.disabled=true;
+    try{
+      var fd=new FormData(qmForm), obj={}; fd.forEach(function(v,k){ obj[k]=v; });
+      var r=await fetch(qmForm.action,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(obj)});
+      var data={}; try{ data=await r.json(); }catch(e){}
+      var ok=r.ok && (data.ok===true || data.success===true || data.success==='true');
+      if(ok){ qmForm.hidden=true; qmSuccess.hidden=false; }
+      else{ qmSubmit.textContent='Send my request'; qmSubmit.disabled=false; alert('We could not send that just now. Please email brandon@tkmold.com or tap WhatsApp and Brandon will jump right on it.'); }
+    }catch(err){ qmSubmit.textContent='Send my request'; qmSubmit.disabled=false; alert('Network issue. Please email brandon@tkmold.com or use WhatsApp.'); }
+  });
+})();
+</script>
+<script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://tkmold.us/#website",
+      "url": "https://tkmold.us/",
+      "name": "TK Mold USA",
+      "description": "Offshore injection molds and tooling with US based technical support.",
+      "publisher": { "@id": "https://tkmold.us/#organization" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://tkmold.us/#organization",
+      "name": "TK Mold USA",
+      "legalName": "TK Group (Holdings) Ltd.",
+      "url": "https://tkmold.us/",
+      "logo": "https://tkmold.us/assets/tk_logo_transparent.png",
+      "image": "https://tkmold.us/assets/site/hero_poster.jpg",
+      "description": "TK Mold USA is the US based technical support channel for TK Group, a Hong Kong main board listed precision injection mold manufacturer. Offshore injection molds and tooling at offshore pricing with a US based engineer on every North American program.",
+      "email": "brandon@tkmold.com",
+      "telephone": "+1-336-953-9664",
+      "slogan": "Offshore injection molds. US based accountability.",
+      "areaServed": { "@type": "Country", "name": "United States" },
+      "knowsAbout": ["China injection mold manufacturing", "Injection mold tooling", "Injection molding services", "Precision injection molding", "Multi shot molding", "LSR molding", "In mold electronics", "Design for manufacturability"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "North Carolina",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "brandon@tkmold.com",
+        "telephone": "+1-336-953-9664",
+        "areaServed": "US",
+        "availableLanguage": "English"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "TK Group (Holdings) Ltd.",
+        "identifier": "HKEX:2283"
+      },
+      "sameAs": ["https://www.tkmold.com/"]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://tkmold.us/#service",
+      "serviceType": "China injection mold manufacturing and tooling",
+      "provider": { "@id": "https://tkmold.us/#organization" },
+      "areaServed": { "@type": "Country", "name": "United States" },
+      "description": "China based precision injection mold manufacturing, tooling, and injection molding services, with a US based engineer providing DFM review, project management, and single point accountability from RFQ through production."
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://tkmold.us/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does injection mold tooling cost in China compared to the US?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A China built injection mold typically lands well below a comparable US built mold, which is why so many programs source tooling from China. Exact pricing depends on part size, cavitation, tolerances, and steel grade, so every quote from TK includes a free DFM review and a line item breakdown before any steel is cut." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to build an injection mold in China?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Lead time is driven by cavitation, part complexity, and the finishing the part requires. TK builds the tooling in China, runs T1 samples, and holds production until you approve those samples. Your timeline is confirmed in writing at quote stage." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I work with a China injection mold manufacturer that has US based support?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Brandon Henderson is your technical contact in North Carolina, in your time zone, from RFQ through first article and into production. You get China manufacturing pricing with a US based engineer accountable to you the entire way." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where are TK's molds manufactured?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Molds are built in TK Group's own manufacturing facilities in China. TK Group (Holdings) Ltd. is a Hong Kong main board listed manufacturer, stock code 2283, with decades of precision tooling and molding for global brands. TK Mold USA is the US based technical support channel." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a minimum volume for injection molding with TK?",
+          "acceptedAnswer": { "@type": "Answer", "text": "TK is built for production programs, from tooling only builds where you run the China built mold in your own plant, to full turnkey injection molding services at high volume. Share your annual volume with your part and Brandon will tell you whether TK is the right fit." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is my design and IP protected when sourcing a mold from China?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Your part, drawings, and program details stay private. TK works under NDA on request, and nothing about your design is shared or reused. You approve T1 samples before any production, and the tooling you pay for is yours. A US based point of contact means accountability sits with a name you can reach." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</script>
+<?php get_footer(); ?>
